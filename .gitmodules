@@ -1,0 +1,3 @@
+[submodule "plugins/ZT"]
+	path = plugins/ZT
+	url = ../smeagol-mediacenter-plugin-zt.git
