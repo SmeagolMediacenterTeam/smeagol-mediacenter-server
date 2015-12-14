@@ -1,0 +1,535 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pr",
+				"prioritity"
+			],
+			[
+				"lo",
+				"login"
+			],
+			[
+				"re",
+				"removeClass"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"s",
+				"selected"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"lastRe",
+				"lastRequest"
+			],
+			[
+				"las",
+				"lastResult"
+			],
+			[
+				"str_r",
+				"str_replace"
+			],
+			[
+				"l",
+				"left"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"pad",
+				"padding-right"
+			],
+			[
+				"se",
+				"setMode"
+			],
+			[
+				"full",
+				"fullscreenOn"
+			],
+			[
+				"e",
+				"event"
+			],
+			[
+				"id",
+				"idEvent"
+			],
+			[
+				"is",
+				"isLogin"
+			],
+			[
+				"array_ke",
+				"array_key_exists"
+			],
+			[
+				"def",
+				"default"
+			],
+			[
+				"propNull",
+				"propNull1"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"freebox",
+				"freeboxos"
+			],
+			[
+				"set",
+				"setTimeout"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"end",
+				"endImplement"
+			],
+			[
+				"find",
+				"findCommentByLine"
+			],
+			[
+				"va",
+				"value"
+			],
+			[
+				"c",
+				"constructeur"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr,user=elewendyl/home/elewendyl/share/freeboxos.elewendyl.fr/freeboxos.sublime-workspace",
+		"/home/dduboeuf/Works/JS/ZTApi/index.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Explorer.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/.htaccess",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/App.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Shortcut.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/ShortcutFreebox.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Player.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/css/player.scss",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/player.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/sass.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/css/function.scss",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/css/index.scss",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Arian.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/index.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Login.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/old/src/APIBundle/Controller/FileController.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Share.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/css/npm-debug.log",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/css/player.css",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/old/web/index.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/app.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/sites/glowbl.elewendyl.fr/index.php",
+		"/home/smeagol/Works/Glowbl/workspace/workspace_php/portal/src/Glowbl/FormBundle/Resources/public/js/controller/FormTools/form/AFormObject.js",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Controller.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/FileExplorer/IFileExplorer.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/FileExplorer/FreeboxFileExplorer.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Services/FileExplorerManager.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Json/Builder.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Entity/RootFile.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Json/Annotation/Json.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/app/constant.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Entity/File.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/app/autoload.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/annotations-1.2.6/lib/Doctrine/Common/Annotations/AnnotationRegistry.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/annotations-1.2.6/lib/Doctrine/Common/Annotations/DocParser.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Resouces/view/File/index.html.twig",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/APIBundle/Controller/FileController.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Kernel.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Request/Request.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Resouces/view/index.html.twig",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/app/config.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Services/FTPConnection.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Request/RequestEntries.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/OSBundle/Services/FileManager.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/vendors/microraptor/Core/Request.php",
+		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/src/APIBundle/Controller/FileControler.php",
+		"/home/smeagol/aaa.html",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassConstructor.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Class.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/testClass.html",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestException.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Exception.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Utils.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassExtends.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassParent.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/DataClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Class2.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassExtendsMutiple.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassScope.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/testfuncs.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Object.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/index.html",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/TestConstructorClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/TestExtendsClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/DataClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Utils.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Class.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Class2.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/TestContructorClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/DataClass.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/testfuncs.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/test.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/Game.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/includes.json",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/package.json",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/generate.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/build.js",
+		"/home/smeagol/Documents/index.html",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/UI.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/View.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/namespace.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/config.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/App.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/5EnLigne/App.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/App/config.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/GollumJS.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/5EnLigne/namespace.js",
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/namespace.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/game.html",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/js/includes.js",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/player.php",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/style.css",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/search-infos.php",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/index.php",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/download.php",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/js/index.js",
+		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/video.php",
+		"/home/smeagol/Works/Glowbl/FakeServer/index.js",
+		"/home/smeagol/Works/JS/smeagol-mediacenter/src/SMC/App.js",
+		"/home/smeagol/Works/JS/freeboxOS2/web/js/components/Console.js",
+		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/build.py",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionMethod.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/generate.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Cache/Cache.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/tmp/cache/datas.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/index.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionClass.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ClassParser.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Annotation/Parser.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/FileJSParser.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/GollumJS.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/namespace.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/includes.json",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionProperty.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Annotation/AbstractAnnotation.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/build.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/package.json",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/build/gollumjs.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/listjsfiles-json.js",
+		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Utils.js",
+		"/home/smeagol/Works/Minecraft/Git/CastleDefenders-1.7.10/build.gradle",
+		"/home/smeagol/Works/Minecraft/Git/JammyFurniture-1.6.4/README.md",
+		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/README.md",
+		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/install.py",
+		"/home/smeagol/Works/Minecraft/Git/build-ori.py",
+		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/eclipse/Minecraft/.classpath",
+		"/home/smeagol/Works/Minecraft/Git/JammyFurniture-1.6.4/eclipse/Minecraft/.project"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/home/smeagol/Works/JS/smeagol-mediacenter/src/SMC"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"				\n",
+			"	\n",
+			"toJquery",
+			"pile",
+			"callUrl",
+			"linea",
+			"initControle",
+			"lastRequest",
+			"execution",
+			"eee",
+			"50",
+			"ls",
+			"login",
+			"Json",
+			"srtin",
+			"push",
+			"mode",
+			"autoloadNamespaces",
+			"classExists",
+			"    ",
+			"value",
+			"console",
+			"initialize",
+			"testCompare",
+			"Arra",
+			"console",
+			"Static",
+			"parentInScope",
+			"Object",
+			"implementation",
+			"protoype",
+			"proto",
+			"back",
+			"click",
+			"ping",
+			"cook",
+			"scaleX",
+			"freebox",
+			"dow",
+			"click",
+			"info",
+			"Mute",
+			"mute",
+			"; ",
+			"none",
+			"exit",
+			"cleanBuild",
+			"out",
+			"zipdir",
+			"print",
+			"glob.iglob(",
+			"glo",
+			"dir",
+			"path",
+			"comme",
+			"classList",
+			"console",
+			"this.datas",
+			"Cache.js",
+			"copy",
+			"str",
+			"read_properties_file",
+			"forge_main",
+			"create_link",
+			"ln",
+			"lb ",
+			"multiplicator",
+			"\"metadata\": 1",
+			"\"orientation\": \"top\"",
+			"\"orientation\": \"up\"",
+			"getAnnotationIdentifier",
+			");\n",
+			" {};",
+			"console",
+			"console.log",
+			"getPosOfStartNameDeclaration",
+			"comment",
+			"getComment",
+			"rClass",
+			"];\n",
+			"\"{\"\n",
+			"console",
+			"		\n",
+			"mysq",
+			"{",
+			"app",
+			"newClass",
+			"NewClass",
+			"NewCl",
+			"SMC.",
+			"{},\n",
+			"dd",
+			"node-w",
+			"node",
+			"},\n",
+			"}\n",
+			"build",
+			"debug",
+			"\",\n",
+			"shell",
+			"platforms",
+			"shell",
+			"exec",
+			"shell",
+			"github",
+			"clone",
+			"{\n",
+			"exec",
+			"}\n",
+			"clone",
+			"start",
+			"nodewebkit",
+			"exec",
+			"exec:linux64",
+			"parseBuildPlatforms",
+			"registerTask",
+			"build",
+			"white",
+			"show",
+			"webkit",
+			"}\n",
+			"Property",
+			"Item",
+			"Yasmine<h3",
+			"<h3 style=\"margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 500;",
+			"font-size: 90%;",
+			"Yassmine",
+			"<h3 style=\""
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"	",
+			";\\n",
+			"<?php echo $video; ?>",
+			"find_files(\".\", ",
+			"GollumJS.cache",
+			"multiplier",
+			"\"orientation\": \"up\"",
+			"\"metadata\": 1",
+			"int",
+			"<h3",
+			"Yasmine<h3 style=\"margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: bold;",
+			"Yasmine",
+			"<h3 style=\"font-weight: bold;",
+			"<strong style=\"font-weight: bold;"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 226.0,
+	"status_bar_visible": true
+}

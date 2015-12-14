@@ -1,3 +1,3 @@
 require('./include.js');
 
-var app = new App();
+var server = new Server();
