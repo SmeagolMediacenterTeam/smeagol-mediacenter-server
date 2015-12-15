@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "express": "^4.13.3",
-    "gollum-classjs": "^0.1.0"
+    "gollum-classjs": "^0.1"
   }
 }
