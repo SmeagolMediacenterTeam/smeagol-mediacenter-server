@@ -1,31 +1,34 @@
-Server.Plugin = new GollumJS.Class({
+GollumJS.NS(Server, function() {
+	
+	this.Plugin = new GollumJS.Class({
 
-	Static: {
-		instance: null,
-	},
+		Static: {
+			instance: null,
+		},
 
-	metaInfos: null,
+		metaInfos: null,
 
-	initialize: function (metaInfos) {
-		this.metaInfos = metaInfos;
-	},
+		initialize: function (metaInfos) {
+			this.metaInfos = metaInfos;
+		},
 
-	beforeLoad: function () {
-	},
+		beforeLoad: function () {
+		},
 
-	load: function () {
-	},
+		load: function () {
+		},
 
-	afterLoad: function () {
-	},
+		afterLoad: function () {
+		},
 
-	beforeUnload: function () {
-	},
+		beforeUnload: function () {
+		},
 
-	unLoad: function () {
-	},
+		unLoad: function () {
+		},
 
-	afterUnload: function () {
-	}
+		afterUnload: function () {
+		}
 
+	});
 });

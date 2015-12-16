@@ -1,48 +1,62 @@
-Server.Plugin.Loader = new GollumJS.Class({
-	
-	Static: {
-		PLUGIN_DIR: 'plugins'
-	},
+GollumJS.NS(Server.Plugin, function() {
 
-	initialize: function () {
-	},
+	var fs      = require('fs-promise');
+	var Promise = require('rsvp').Promise;
 
-	load: function (cb) {
-
-		var plugins     = [];
-		var fs          = require('fs');
-		var pluginsPath = './'+this.self.PLUGIN_DIR;
-
-		fs.readdir(pluginsPath, function (err, files) {
-
-			if (err) {
-				console.error (err);
-				cb(err, null);
-				return;
-			}
-
-			var step = GollumJS.Utils.step(files.length, function () {
-				cb(null, plugins);
-			});
-
-			for (var i = 0; i < files.length; i++) {
-				// TODO Zip file not implement
-				var file = files[i];
-				fs.stat(pluginPath, function (err, stats) {
-					if (err) {
-						console.error (err);
-					}
-					if (stats.isDirectory()) {
-						console.log (pluginPath);
-						step();
-					} else {
-						// TODO ZipContainer not implemented
-						step();
-					}
-				})
-			}
-		});
+	this.Loader = new GollumJS.Class({
 		
-	}
-	
+		Static: {
+			PLUGIN_DIR: 'plugins',
+			PLUGIN_FILE_DESCRIPTOR: 'plugin.json'
+		},
+
+		initialize: function () {
+		},
+
+		load: function () {
+			var _this = this;
+			return new Promise(function(resolve, reject) {
+
+				var plugins     = [];
+				var pluginsPath = './'+_this.self.PLUGIN_DIR;
+
+				fs.readdir(pluginsPath).
+					then(function (files) {
+
+						var step = GollumJS.Utils.step(files.length, function () {
+							resolve(plugins);
+						});
+
+						GollumJS.Utils.each(files, function (i, file) {
+							var pluginPath = pluginsPath+'/'+file;
+							fs.stat(pluginPath).
+								then(function (stats) {
+									if (stats.isDirectory()) {
+										Server.Plugin.DirectoryContainer.isPlugin(pluginPath).
+											then(function(isPlugin) {
+												if (isPlugin) {
+													plugins.push(new Server.Plugin.DirectoryContainer(pluginPath));
+												};
+												step();
+											}).
+											catch(console.error)
+										;
+									} else {
+										// TODO ZipContainer not implemented
+										step();
+									}
+								}).
+								catch(console.error)
+							;
+						});
+					}).
+					catch(function (err) {
+						console.error (err);
+						reject(err);
+					})
+				;
+			});
+		}
+		
+	});
 });
