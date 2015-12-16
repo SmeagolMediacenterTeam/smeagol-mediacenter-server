@@ -14,10 +14,10 @@ GollumJS.NS(Server.Plugin, function() {
 			PLUGIN_FILE_INCLUDE   : 'include.json'
 		},
 
-		server: null,
+		loader: null,
 
-		initialize: function (server) {
-			this.server = server;
+		initialize: function (loader) {
+			this.loader = loader;
 		},
 
 		loadAll: function () {
@@ -32,7 +32,7 @@ GollumJS.NS(Server.Plugin, function() {
 			return new Promise(function(resolve, reject) {
 
 				var plugins     = [];
-				var pluginsPath = _this.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
+				var pluginsPath = _this.loader.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
 
 				FS.readdir(pluginsPath)
 					.then(function (files) {

@@ -7,7 +7,7 @@ GollumJS.NS(Server, function() {
 		},
 
 		container: null,
-		enable: false,
+		isEnable: false,
 
 		initialize: function (container) {
 			this.container = container;

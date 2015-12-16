@@ -5,28 +5,27 @@ GollumJS.NS(function() {
 
 	this.Server = new GollumJS.Class({
 		
-		plugins: [],
+		pluginsManager: null,
 
 		initialize: function () {
-			console.log ('Start SMC Server');
+			console.log ('Initialize SMC Server');
+			this.pluginsManager = new Server.Plugin.Manager(this);
 
-			this.loadPlugins().
-			then(function(plugins) {
-	  			console.log ("Plugin loaded", plugins);
-			}).
-			catch(function(error) {
-	  			console.log ("Error to load plugin", error);
-			});
-		},
-
-		loadPlugins: function () {
-			var _this = this;
-			return (new Server.Plugin.Loader(this)).loadAll().
-				then(function (plugins) {
-					_this.plugins = plugins;
-					return Server.Utils.Promise.resolve(plugins);
+			this.init()
+				.then(this.start.bind(this))
+				.catch(function (error) {
+					console.error ("Server: Error on Runtime:", error);
 				})
 			;
+		},
+
+		init: function () {
+			return this.pluginsManager.init();
+		},
+
+		start: function () {
+			console.log ('Start SMC Server');
+			return this.pluginsManager.start();
 		},
 
 		getRootPath: function () {
