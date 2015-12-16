@@ -1,7 +1,9 @@
 GollumJS.NS(Server.Plugin, function() {
 
-	var FS      = require('fs-promise');
-	var Promise = require('rsvp').Promise;
+	var FS              = require('fs-promise');
+	var Promise         = require('rsvp').Promise;
+	var Collection      = GollumJS.Utils.Collection;
+	var ReflectionClass = GollumJS.Reflection.ReflectionClass;
 
 	this.Loader = new GollumJS.Class({
 		
@@ -34,12 +36,7 @@ GollumJS.NS(Server.Plugin, function() {
 
 				FS.readdir(pluginsPath)
 					.then(function (files) {
-
-						var step = GollumJS.Utils.step(files.length, function () {
-							resolve(plugins);
-						});
-
-						GollumJS.Utils.each(files, function (i, file) {
+						Collection.eachStep(files, function (i, file, step) {
 							var pluginPath = pluginsPath+'/'+file;
 							FS.stat(pluginPath)
 								.then(function (stats) {
@@ -62,6 +59,9 @@ GollumJS.NS(Server.Plugin, function() {
 									step();
 								})
 							;
+						},
+						function () {
+							resolve(plugins);
 						});
 					})
 					.catch(function (err) {
@@ -78,11 +78,7 @@ GollumJS.NS(Server.Plugin, function() {
 
 			return new Promise(function(resolve, reject) {
 
-				var step = GollumJS.Utils.step(pluginContainers.length, function () {
-					resolve(pluginContainers);
-				});
-
-				GollumJS.Utils.each(pluginContainers, function (i, container) {
+				Collection.eachStep(pluginContainers, function (i, container, step) {
 					try {
 						_this._loadMetaInfosFile (container)
 							.then(function ()      { return container.getInclude();                       })
@@ -96,6 +92,9 @@ GollumJS.NS(Server.Plugin, function() {
 						console.log (e);
 						step();
 					}
+				},
+				function () {
+					resolve(pluginContainers);
 				});
 			});
 		},
@@ -121,12 +120,7 @@ GollumJS.NS(Server.Plugin, function() {
 				then(function(runPath) {
 					return new Promise(function(resolve, reject) {
 
-						var step = GollumJS.Utils.step(files.length, function () {
-							console.log ("SMC Loader: JS files are loaded");
-							resolve();
-						});
-
-						GollumJS.Utils.each(files, function (i, file) {
+						Collection.eachStep(files, function (i, file, step) {
 							try {
 								var jsFilePath = runPath+"/"+file;
 								console.info ("SMC Loader: load JS file:", jsFilePath);
@@ -136,6 +130,10 @@ GollumJS.NS(Server.Plugin, function() {
 								console.log (e);
 								step();
 							}
+						},
+						function () {
+							console.log ("SMC Loader: JS files are loaded");
+							resolve();
 						});
 					});
 				})
@@ -144,16 +142,33 @@ GollumJS.NS(Server.Plugin, function() {
 
 		
 		_createPluginObject: function (pluginContainers) {
+			
+			var _this = this;
 			var plugin = [];
 
-			return Server.Utils.Promise.resolve(plugin);
-			/*
-			console.info ("Create plugin instance", container.metaInfos.name);
 			return new Promise(function(resolve, reject) {
-				console.log ("metaInfos", metaInfos);
-				resolve();
+				Collection.eachStep(pluginContainers, function (i, container, step) {
+					try {
+						var clazz = ReflectionClass.getClassByName(container.metaInfos.main);
+						if (clazz) {
+							plugin.push(new clazz(container));
+						} else {
+							console.error("SMC Loader: Can not create plugin instance "+container.metaInfos.name);
+							console.error("  can't create \""+container.metaInfos.main+"\" instance.");
+						}
+						step();
+					} catch (e) {
+						console.error("SMC Loader: Can not create plugin instance "+container.metaInfos.name);
+						console.log (e);
+						step();
+					}
+				},
+				function() {
+					resolve(plugin);
+				});
 			});
-			*/
+
+			return Server.Utils.Promise.resolve(plugin);
 		}
 		
 		

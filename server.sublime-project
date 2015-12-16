@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/home/dduboeuf/Works/JS/SMC/server"
+			"follow_symlinks": true,
+			"path": "."
 		}
 	]
 }
