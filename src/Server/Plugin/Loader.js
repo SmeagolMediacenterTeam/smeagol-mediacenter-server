@@ -32,8 +32,8 @@ GollumJS.NS(Server.Plugin, function() {
 				var plugins     = [];
 				var pluginsPath = _this.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
 
-				FS.readdir(pluginsPath).
-					then(function (files) {
+				FS.readdir(pluginsPath)
+					.then(function (files) {
 
 						var step = GollumJS.Utils.step(files.length, function () {
 							resolve(plugins);
@@ -41,31 +41,30 @@ GollumJS.NS(Server.Plugin, function() {
 
 						GollumJS.Utils.each(files, function (i, file) {
 							var pluginPath = pluginsPath+'/'+file;
-							FS.stat(pluginPath).
-								then(function (stats) {
+							FS.stat(pluginPath)
+								.then(function (stats) {
 									if (stats.isDirectory()) {
-										Server.Plugin.DirectoryContainer.isPlugin(pluginPath).
-											then(function(isPlugin) {
+										Server.Plugin.DirectoryContainer.isPlugin(pluginPath)
+											.then(function(isPlugin) {
 												if (isPlugin) {
 													plugins.push(new Server.Plugin.DirectoryContainer(pluginPath));
 												};
 												step();
-											}).
-											catch(console.error)
+											});
 										;
 									} else {
 										// TODO ZipContainer not implemented
 										step();
 									}
-								}).
-								catch(function () {
+								})
+								.catch(function () {
 									console.error
 									step();
 								})
 							;
 						});
-					}).
-					catch(function (err) {
+					})
+					.catch(function (err) {
 						console.error (err);
 						reject(err);
 					})
@@ -146,7 +145,7 @@ GollumJS.NS(Server.Plugin, function() {
 		
 		_createPluginObject: function (pluginContainers) {
 			var plugin = [];
-			
+
 			return Server.Utils.Promise.resolve(plugin);
 			/*
 			console.info ("Create plugin instance", container.metaInfos.name);
