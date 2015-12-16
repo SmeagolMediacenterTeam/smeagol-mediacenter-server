@@ -1,7 +1,7 @@
 GollumJS.NS(Server.Plugin, function () {
 	
 	var Promise = require('rsvp').Promise;
-	var fs      = require('fs-promise');
+	var FS      = require('fs-promise');
 
 	this.DirectoryContainer = new GollumJS.Class({
 
@@ -10,14 +10,14 @@ GollumJS.NS(Server.Plugin, function () {
 		Static: {
 			isPlugin:function (pluginPath) {
 				return new Promise(function(resolve, reject) {
-					fs.stat(pluginPath).
+					FS.stat(pluginPath).
 						then(function (stats) {
 							if (!stats.isDirectory()) {
 								resolve(false);
 								return;
 							}
 							var pluginFile = pluginPath+'/'+Server.Plugin.Loader.PLUGIN_FILE_DESCRIPTOR;
-							fs.stat(pluginFile).
+							FS.stat(pluginFile).
 								then(function (stats) {
 									if (!stats.isFile()) {
 										resolve(false);
@@ -42,8 +42,11 @@ GollumJS.NS(Server.Plugin, function () {
 
 		initialize: function (pathSource) {
 			this.pathSource = pathSource;
+		},
+
+		getRunPath: function () {
+			return Server.Utils.Promise.resolve(this.pathSource);
 		}
-		
 	});
 
 });

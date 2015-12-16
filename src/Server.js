@@ -1,5 +1,6 @@
-GollumJS.NS(null, function() {
+GollumJS.NS(function() {
 
+	var Path    = require('path');
 	var Promise = require('rsvp').Promise;
 
 	this.Server = new GollumJS.Class({
@@ -20,16 +21,16 @@ GollumJS.NS(null, function() {
 
 		loadPlugins: function () {
 			var _this = this;
-			return new Promise(function(resolve, reject) {
-				(new Server.Plugin.Loader()).load().
+			return (new Server.Plugin.Loader(this)).loadAll().
 				then(function (plugins) {
 					_this.plugins = plugins;
-					resolve(plugins);
-				}).
-				catch(function (error) {
-					reject(error);
-				});
-			});
+					return Server.Utils.Promise.resolve(plugins);
+				})
+			;
+		},
+
+		getRootPath: function () {
+			return Path.resolve("./");
 		}
 	});
 

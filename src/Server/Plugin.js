@@ -1,33 +1,34 @@
 GollumJS.NS(Server, function() {
-	
+
 	this.Plugin = new GollumJS.Class({
 
 		Static: {
 			instance: null,
 		},
 
-		metaInfos: null,
+		container: null,
+		enable: false,
 
-		initialize: function (metaInfos) {
-			this.metaInfos = metaInfos;
+		initialize: function (container) {
+			this.container = container;
 		},
 
-		beforeLoad: function () {
+		beforeEnableProcess: function () {
 		},
 
-		load: function () {
+		enable: function () {
 		},
 
-		afterLoad: function () {
+		afterEnableProcess: function () {
 		},
 
-		beforeUnload: function () {
+		beforeDisableProcess: function () {
 		},
 
-		unLoad: function () {
+		disable: function () {
 		},
 
-		afterUnload: function () {
+		afterDisableProcess: function () {
 		}
 
 	});
