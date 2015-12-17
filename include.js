@@ -12,3 +12,5 @@ require('./src/Server/Plugin/Loader.js');
 require('./src/Server/Plugin/Container.js');
 require('./src/Server/Plugin/DirectoryContainer.js');
 require('./src/Server/Plugin/ZipContainer.js');
+
+require('./src/Server/Media/Manager.js');

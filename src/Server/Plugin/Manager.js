@@ -1,5 +1,5 @@
 GollumJS.NS(Server.Plugin, function() {
-
+	
 	var Promise    = require('rsvp').Promise;
 	var Collection = GollumJS.Utils.Collection;
 

@@ -12,7 +12,7 @@ GollumJS.NS(Server.Controller, function() {
 
 		actions: {
 
-			'/series': function(req, res, done) {
+			'/serie': function(req, res, done) {
 				var list = [];
 				res.end(JSON.stringify(list));
 				done();

@@ -5,12 +5,14 @@ GollumJS.NS(Server, function() {
 
 	this.Http = new GollumJS.Class({
 		
+		server : null,
 		express: null,
 		controllers: {},
 
-		initialize: function () {
+		initialize: function (server) {
+			this.server  = server; 
 			this.express = express();
-			this.addController("/api", new Server.Controller.Api());
+			this.addController("/api", new Server.Controller.Api(this));
 		},
 
 		init: function () {

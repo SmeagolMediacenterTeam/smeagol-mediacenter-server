@@ -1,7 +1,12 @@
 GollumJS.NS(Server, function() {
 
 	this.Controller = new GollumJS.Class({
-		
+		http: null,
+
+		initialize: function (http) {
+			this.http = http;
+		},
+
 		actions: {
 		},
 
@@ -11,6 +16,10 @@ GollumJS.NS(Server, function() {
 
 		afterAction: function (action, req, res, done) {
 			done();
+		},
+
+		server: function () {
+			return this.http.server;
 		}
 		
 	});

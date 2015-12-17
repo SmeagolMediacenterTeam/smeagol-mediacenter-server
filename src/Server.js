@@ -7,10 +7,12 @@ GollumJS.NS(function() {
 		
 		pluginsManager: null,
 		http: null,
+		mediasManager: null,
 
 		initialize: function () {
 			console.log ('Initialize SMC Server');
 			this.pluginsManager = new Server.Plugin.Manager(this);
+			this.mediasManager  = new Server.Media.Manager(this);
 			this.http           = new Server.Http(this);
 
 			this.init()
@@ -23,6 +25,7 @@ GollumJS.NS(function() {
 
 		init: function () {
 			return this.pluginsManager.init()
+				.then(this.mediasManager.init.bind(this.mediasManager))
 				.then(this.http.init.bind(this.http))
 			;
 		},
@@ -30,6 +33,7 @@ GollumJS.NS(function() {
 		start: function () {
 			console.log ('Start SMC Server');
 			return this.pluginsManager.start()
+				.then(this.mediasManager.start.bind(this.mediasManager))
 				.then(this.http.start.bind(this.http))
 			;
 		},
