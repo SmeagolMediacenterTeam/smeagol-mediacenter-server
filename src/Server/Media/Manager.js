@@ -15,11 +15,16 @@ GollumJS.NS(Server.Media, function() {
 		},
 
 		registerSource: function (source) {
-						
+			console.log ('Media Manager: Register Source');
+			this.sources.push(source);
 		},
 
 		unregisterSource: function (source) {
-			
+			console.log ('Media Manager: Unregister Source');	
+			var i = this.sources.indexOf(source);
+			if (i > 0) {
+				this.sources.splice(i, 1);
+			}
 		},
 
 		init: function () {
@@ -56,6 +61,7 @@ GollumJS.NS(Server.Media, function() {
 							})
 						;
 					}, function () {
+						console.log ('Media Manager: '+_this.index[group].length+' '+group+' Indexed');
 						stepI();
 					});
 				},
@@ -67,10 +73,14 @@ GollumJS.NS(Server.Media, function() {
 		},
 
 		getMedias: function (group) {
-			if (this.sources[group]) {
-				return this.sources[group];
-			}
-			return [];
+			return new Promise(function(resolve, reject) {
+				var medias = [];
+				if (this.sources[group]) {
+					medias = this.sources[group];
+
+				}
+				return resolve(medias);
+			});
 		}
 
 

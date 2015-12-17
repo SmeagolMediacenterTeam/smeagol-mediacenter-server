@@ -31,7 +31,7 @@ GollumJS.NS(Server, function() {
 						console.log("Http GET: "+route);
 
 						controller.beforeAction(action, req, res, function() {
-							cb(req, res, function() {
+							cb.call(controller, req, res, function() {
 								controller.afterAction(action, req, res, function() {});
 							});
 						});

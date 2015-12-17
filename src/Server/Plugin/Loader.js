@@ -14,10 +14,10 @@ GollumJS.NS(Server.Plugin, function() {
 			PLUGIN_FILE_INCLUDE   : 'include.json'
 		},
 
-		loader: null,
+		manager: null,
 
-		initialize: function (loader) {
-			this.loader = loader;
+		initialize: function (manager) {
+			this.manager = manager;
 		},
 
 		loadAll: function () {
@@ -32,7 +32,7 @@ GollumJS.NS(Server.Plugin, function() {
 			return new Promise(function(resolve, reject) {
 
 				var plugins     = [];
-				var pluginsPath = _this.loader.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
+				var pluginsPath = _this.manager.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
 
 				FS.readdir(pluginsPath)
 					.then(function (files) {
@@ -151,7 +151,7 @@ GollumJS.NS(Server.Plugin, function() {
 					try {
 						var clazz = ReflectionClass.getClassByName(container.metaInfos.main);
 						if (clazz) {
-							plugin.push(new clazz(container));
+							plugin.push(new clazz(_this.manager, container));
 						} else {
 							console.error("SMC Loader: Can't create plugin instance "+container.metaInfos.name);
 							console.error("  can't create \""+container.metaInfos.main+"\" instance.");

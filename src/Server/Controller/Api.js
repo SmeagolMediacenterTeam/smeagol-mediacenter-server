@@ -13,9 +13,12 @@ GollumJS.NS(Server.Controller, function() {
 		actions: {
 
 			'/serie': function(req, res, done) {
-				var list = [];
-				res.end(JSON.stringify(list));
-				done();
+				this.server().mediasManager.getMedias('serie')
+					.then(function (medias) {
+						res.end(JSON.stringify(medias));
+						done();
+					})
+				;
 			}
 		}
 

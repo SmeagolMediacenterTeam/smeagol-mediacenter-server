@@ -9,7 +9,8 @@ GollumJS.NS(Server, function() {
 		container: null,
 		isEnable: false,
 
-		initialize: function (container) {
+		initialize: function (manager, container) {
+			this.manager = manager;
 			this.container = container;
 		},
 
@@ -37,7 +38,15 @@ GollumJS.NS(Server, function() {
 			done();
 		},
 
-		toString: function() {
+		id: function () {
+			return this.container.metaInfos.id;
+		},
+
+		server: function () {
+			return this.manager.server;
+		},
+
+		toString: function () {
 			return  this.container.metaInfos && this.container.metaInfos.id ? this.container.metaInfos.id : "IDModNotFound";
 		}
 
