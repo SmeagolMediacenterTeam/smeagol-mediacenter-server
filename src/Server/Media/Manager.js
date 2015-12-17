@@ -38,7 +38,7 @@ GollumJS.NS(Server.Media, function() {
 
 		indexMedias: function () {
 
-			console.log ('Media Manager: Index All Media');
+			console.log ('Media Manager: Index All Media on '+this.sources.length+' souces');
 
 			var _this = this;
 
@@ -52,7 +52,7 @@ GollumJS.NS(Server.Media, function() {
 					Collection.eachStep(_this.sources, function (i, source, stepJ) {
 						source.getMedias(group)
 							.then(function (medias) {
-								_this.index[group].concat(medias);
+								_this.index[group] = _this.index[group].concat(medias);
 								stepJ();
 							})
 							.catch(function (error) {
@@ -73,14 +73,12 @@ GollumJS.NS(Server.Media, function() {
 		},
 
 		getMedias: function (group) {
-			return new Promise(function(resolve, reject) {
-				var medias = [];
-				if (this.sources[group]) {
-					medias = this.sources[group];
+			var medias = [];
+			if (this.index[group]) {
+				medias = this.index[group];
 
-				}
-				return resolve(medias);
-			});
+			}
+			return medias;
 		}
 
 
