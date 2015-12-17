@@ -1,3 +1,6 @@
 [submodule "plugins/ZT"]
 	path = plugins/ZT
 	url = ../smeagol-mediacenter-plugin-zt.git
+[submodule "plugins/LocalFiles"]
+	path = plugins/LocalFiles
+	url = https://github.com/SmeagolMediacenterTeam/smeagol-mediacenter-plugin-localfiles.git
