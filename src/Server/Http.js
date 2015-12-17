@@ -46,9 +46,13 @@ GollumJS.NS(Server, function() {
 			console.log ('Start Http');
 			this.express.listen(8383);
 		},
-
+		
 		addController: function (controllerName, controller) {
 			this.controllers[controllerName] = controller;
+		},
+
+		removeController: function (controllerName) {
+			delete this.controllers[controllerName];
 		}
 		
 	});

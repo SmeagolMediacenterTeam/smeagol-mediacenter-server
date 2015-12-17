@@ -54,26 +54,28 @@ GollumJS.NS(Server.Plugin, function() {
 
 		start: function () {
 			console.log ('Start Plugin Manager');
-			var _this = this;
-			return this._beforeEnableProcess()
-				.then (function () { return _this.enable(_this.plugins) })
-				.then (this._afternableProcess.bind(this))
-			;
+			return this.enable(this.plugins);
 		},
 
 		enable: function (plugins) {
-			console.log("Plugin Manager: enable plugin: [ "+plugins+" ]");
-			return callForAllPlugins(plugins, 'enable');
+			console.log("Plugin Manager: Start enable plugins: [ "+plugins+" ]");
+			return this._beforeProcessEnableProcess()
+				.then(function () { 
+					console.log("Plugin Manager: Enable plugins: [ "+plugins+" ]");
+					return callForAllPlugins(plugins, 'enable'); 
+				})
+				.then(this._afterProcessEnable.bind(this))
+			;
 		},
 
-		_beforeEnableProcess: function () {
+		_beforeProcessEnableProcess: function () {
 			console.log("Plugin Manager: before load process");
-			return callForAllPlugins(this.plugins, 'beforeEnableProcess');
+			return callForAllPlugins(this.plugins, 'beforeProcessEnable');
 		},
 
-		_afternableProcess: function () {
+		_afterProcessEnable: function () {
 			console.log("Plugin Manager: after load process");
-			return callForAllPlugins(this.plugins, 'afterEnableProcess');
+			return callForAllPlugins(this.plugins, 'afterProcessEnable');
 		}
 
 	});

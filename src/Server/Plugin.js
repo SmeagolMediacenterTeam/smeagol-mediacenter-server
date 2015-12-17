@@ -14,7 +14,7 @@ GollumJS.NS(Server, function() {
 			this.container = container;
 		},
 
-		beforeEnableProcess: function (done) {
+		beforeProcessEnable: function (done) {
 			done();
 		},
 
@@ -22,11 +22,11 @@ GollumJS.NS(Server, function() {
 			done();
 		},
 
-		afterEnableProcess: function (done) {
+		afterProcessEnable: function (done) {
 			done();
 		},
 
-		beforeDisableProcess: function (done) {
+		beforeProcessDisable: function (done) {
 			done();
 		},
 
@@ -34,14 +34,41 @@ GollumJS.NS(Server, function() {
 			done();
 		},
 
-		afterDisableProcess: function (done) {
+		afterProcessDisable: function (done) {
 			done();
 		},
 
+		/**
+		 * @return string Helper. Return the unique ID of plugin
+		 */
 		id: function () {
 			return this.container.metaInfos.id;
 		},
 
+		/**
+		 * @return string Helper. Return the name of plugin
+		 */
+		name: function () {
+			return this.container.metaInfos.name;
+		},
+
+		/**
+		 * @return string Helper. Return the version of plugin
+		 */
+		version: function () {
+			return this.container.metaInfos.version;
+		},
+
+		/**
+		 * @return [ string ] Helper. Return the author's list of of plugin
+		 */
+		authors: function () {
+			return this.container.metaInfos.authors;
+		},
+
+		/**
+		 * @return Server Helper. Return the server instance
+		 */
 		server: function () {
 			return this.manager.server;
 		},

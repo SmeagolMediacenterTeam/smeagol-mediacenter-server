@@ -38,7 +38,7 @@ GollumJS.NS(Server.Media, function() {
 
 		indexMedias: function () {
 
-			console.log ('Media Manager: Index All Media on '+this.sources.length+' souces');
+			console.log ('Media Manager: Index All Media on '+this.sources.length+' sources');
 
 			var _this = this;
 
@@ -61,7 +61,7 @@ GollumJS.NS(Server.Media, function() {
 							})
 						;
 					}, function () {
-						console.log ('Media Manager: '+_this.index[group].length+' '+group+' Indexed');
+						console.log ('Media Manager: '+_this.index[group].length+' "'+group+'" Indexed');
 						stepI();
 					});
 				},
