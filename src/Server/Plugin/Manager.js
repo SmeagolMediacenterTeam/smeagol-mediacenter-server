@@ -27,11 +27,11 @@ GollumJS.NS(Server.Plugin, function() {
 		plugins: [],
 
 		initialize: function (server) {
-			console.log ('Initialize Plugin Manager');
 			this.server = server;
 		},
 
 		init: function () {
+			console.log ('Initialize Plugin Manager');
 			return this.loadPlugins()
 				.then(function(plugins) {
 		  			console.log ("Plugin loaded[ "+plugins+" ]");
@@ -53,6 +53,7 @@ GollumJS.NS(Server.Plugin, function() {
 		},
 
 		start: function () {
+			console.log ('Start Plugin Manager');
 			var _this = this;
 			return this._beforeEnableProcess()
 				.then (function () { return _this.enable(_this.plugins) })

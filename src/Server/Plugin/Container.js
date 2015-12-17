@@ -7,9 +7,6 @@ GollumJS.NS(Server.Plugin, function() {
 		
 		metaInfos: null,
 
-		initialize: function () {
-		},
-
 		getRunPath: function () {
 			return Server.Utils.Promise.reject(new GollumJS.Exception('Not implemented, can be override.'));
 		},
