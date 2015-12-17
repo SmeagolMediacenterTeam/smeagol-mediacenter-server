@@ -119,7 +119,7 @@ GollumJS.NS(Server.Plugin, function() {
 			return container.getRunPath().
 				then(function(runPath) {
 					return new Promise(function(resolve, reject) {
-
+						
 						Collection.eachStep(files, function (i, file, step) {
 							try {
 								var jsFilePath = runPath+"/"+file;
@@ -153,12 +153,12 @@ GollumJS.NS(Server.Plugin, function() {
 						if (clazz) {
 							plugin.push(new clazz(container));
 						} else {
-							console.error("SMC Loader: Can not create plugin instance "+container.metaInfos.name);
+							console.error("SMC Loader: Can't create plugin instance "+container.metaInfos.name);
 							console.error("  can't create \""+container.metaInfos.main+"\" instance.");
 						}
 						step();
 					} catch (e) {
-						console.error("SMC Loader: Can not create plugin instance "+container.metaInfos.name);
+						console.error("SMC Loader: Can't create plugin instance "+container.metaInfos.name);
 						console.log (e);
 						step();
 					}

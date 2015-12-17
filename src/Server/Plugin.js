@@ -13,22 +13,32 @@ GollumJS.NS(Server, function() {
 			this.container = container;
 		},
 
-		beforeEnableProcess: function () {
+		beforeEnableProcess: function (done) {
+			done();
 		},
 
-		enable: function () {
+		enable: function (done) {
+			done();
 		},
 
-		afterEnableProcess: function () {
+		afterEnableProcess: function (done) {
+			done();
 		},
 
-		beforeDisableProcess: function () {
+		beforeDisableProcess: function (done) {
+			done();
 		},
 
-		disable: function () {
+		disable: function (done) {
+			done();
 		},
 
-		afterDisableProcess: function () {
+		afterDisableProcess: function (done) {
+			done();
+		},
+
+		toString: function() {
+			return  this.container.metaInfos && this.container.metaInfos.id ? this.container.metaInfos.id : "IDModNotFound";
 		}
 
 	});

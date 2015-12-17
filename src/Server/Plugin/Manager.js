@@ -3,6 +3,24 @@ GollumJS.NS(Server.Plugin, function() {
 	var Promise    = require('rsvp').Promise;
 	var Collection = GollumJS.Utils.Collection;
 
+	var callForAllPlugins = function (iterable, cbName) {
+		return new Promise(function(resolve, reject) {
+			Collection.eachStep(iterable, function (i, plugin, step) {
+				try {
+					plugin[cbName](function() {
+						step();
+					});
+				} catch (e) {
+					console.error(e);
+					step();
+				}
+			},
+			function () {
+				resolve();
+			});
+		});
+	};
+
 	this.Manager = new GollumJS.Class({
 
 		server: null,
@@ -16,7 +34,7 @@ GollumJS.NS(Server.Plugin, function() {
 		init: function () {
 			return this.loadPlugins()
 				.then(function(plugins) {
-		  			console.log ("Plugin loaded", plugins);
+		  			console.log ("Plugin loaded[ "+plugins+" ]");
 				})
 				.catch(function(error) {
 		  			console.log ("Error to load all plugin", error);
@@ -36,53 +54,25 @@ GollumJS.NS(Server.Plugin, function() {
 
 		start: function () {
 			var _this = this;
-			return this._beforeEnableProcess('beforeEnableProcess')
+			return this._beforeEnableProcess()
 				.then (function () { return _this.enable(_this.plugins) })
-				.then (function () { return _this._callForAllPlugins('afterEnableProcess') })
+				.then (this._afternableProcess.bind(this))
 			;
 		},
 
-		enable: function(plugins) {
-			var _this = this;
-			return new Promise(function(resolve, reject) {
-				Collection.eachStep(plugins, function (i, plugin, step) {
-					try {
-						plugin.enable();
-						plugin.isEnable = true;
-					} catch (e) {
-						console.error(e);
-					}
-					step();
-				},
-				function () {
-					resolve();
-				});
-			}); 
-		},
-
-		_callForAllPlugins: function (cbName) {
-			var _this = this;
-			return new Promise(function(resolve, reject) {
-				Collection.eachStep(_this.plugins, function (i, plugin, step) {
-					try {
-						plugin[cbName]();
-					} catch (e) {
-						console.error(e);
-					}
-					step();
-				},
-				function () {
-					resolve();
-				});
-			});
+		enable: function (plugins) {
+			console.log("Plugin Manager: enable plugin: [ "+plugins+" ]");
+			return callForAllPlugins(plugins, 'enable');
 		},
 
 		_beforeEnableProcess: function () {
-			return this._callForAllPlugins('beforeEnableProcess');
+			console.log("Plugin Manager: before load process");
+			return callForAllPlugins(this.plugins, 'beforeEnableProcess');
 		},
 
 		_afternableProcess: function () {
-			return this._callForAllPlugins('afterEnableProcess');
+			console.log("Plugin Manager: after load process");
+			return callForAllPlugins(this.plugins, 'afterEnableProcess');
 		}
 
 	});
