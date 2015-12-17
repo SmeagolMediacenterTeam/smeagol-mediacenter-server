@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.13.3",
+    "fs-extra-promise": "^0.3.1",
     "fs-promise": "^0.3.1",
     "gollum-classjs": "^0.1",
     "jquery": "^2.1.4",
