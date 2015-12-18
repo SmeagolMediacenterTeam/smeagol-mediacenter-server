@@ -4,10 +4,25 @@ GollumJS.NS(Server, function() {
 
 	this.Source = new GollumJS.Class({
 
+		plugin: null,
+		name: null,
+
+		initialize: function (plugin, name) {
+			name = name || "";
+			this.plugin = plugin;
+			this.name   = name;
+		},
+
+		sourceName: function () {
+			return this.plugin.id()+(this.name != "" ? '_'+this.name : "");
+		},
+
 		getMedias: function (group) {
-			return new Promise(function(resolve, reject) {
-				resolve([]);
-			});
+			return Server.Utils.Promise.resolve([]);
+		},
+
+		getDetails: function (group, id) {
+			return Server.Utils.Promise.resolve(null);
 		}
 
 	});

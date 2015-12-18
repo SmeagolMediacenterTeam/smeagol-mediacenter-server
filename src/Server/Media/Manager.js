@@ -1,4 +1,3 @@
-Server.Media = {};
 GollumJS.NS(Server.Media, function() {
 
 	var Collection = GollumJS.Utils.Collection;
@@ -56,7 +55,7 @@ GollumJS.NS(Server.Media, function() {
 								stepJ();
 							})
 							.catch(function (error) {
-								console.log ("Error on index media:", error);
+								console.error ("Error on index media:", error);
 								stepJ();
 							})
 						;
@@ -79,6 +78,15 @@ GollumJS.NS(Server.Media, function() {
 
 			}
 			return medias;
+		},
+
+		getSource: function (name) {
+			for (var i = 0; i < this.sources.length; i++) {
+				if (name == this.sources[i].sourceName()) {
+					return this.sources[i];
+				}
+			}
+			return null;
 		}
 
 

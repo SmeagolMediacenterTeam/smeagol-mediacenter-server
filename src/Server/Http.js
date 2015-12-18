@@ -1,6 +1,6 @@
 GollumJS.NS(Server, function() {
 
-	var express = require('express');
+	var express    = require('express');
 	var Collection = GollumJS.Utils.Collection;
 
 	this.Http = new GollumJS.Class({
@@ -28,7 +28,7 @@ GollumJS.NS(Server, function() {
 
 					_this.express.get(route, function (req, res) {
 						
-						console.log("Http GET: "+route);
+						console.log("Http GET: "+route, req.params);
 
 						controller.beforeAction(action, req, res, function() {
 							cb.call(controller, req, res, function() {
