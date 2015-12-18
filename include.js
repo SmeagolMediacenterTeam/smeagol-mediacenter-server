@@ -1,10 +1,14 @@
 require('./config.js');
 require('gollum-classjs');
+
 require('./src/Server.js');
 require('./src/Server/Utils.js');
 require('./src/Server/Utils/Promise.js');
+
 require('./src/Server/Request.js');
 require('./src/Server/Http.js');
+require('./src/Server/Scheduler.js');
+
 require('./src/Server/Controller.js');
 require('./src/Server/Controller/Api.js');
 
