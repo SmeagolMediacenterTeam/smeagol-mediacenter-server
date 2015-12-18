@@ -17,6 +17,10 @@ GollumJS.NS(Server, function() {
 			return this.plugin.id()+(this.name != "" ? '_'+this.name : "");
 		},
 
+		getGroups: function (name) {
+			return Server.Utils.Promise.resolve([]);
+		},
+
 		getMedias: function (group) {
 			return Server.Utils.Promise.resolve([]);
 		},

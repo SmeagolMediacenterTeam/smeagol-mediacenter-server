@@ -79,7 +79,7 @@ GollumJS.NS(Server.Media, function() {
 			}
 			return medias;
 		},
-
+		
 		getSource: function (name) {
 			for (var i = 0; i < this.sources.length; i++) {
 				if (name == this.sources[i].sourceName()) {
@@ -87,6 +87,28 @@ GollumJS.NS(Server.Media, function() {
 				}
 			}
 			return null;
+		},
+		
+		getGroups: function (name) {
+			var _this = this;
+			return new Promise(function(resolve, reject) {
+				var group = [];
+				GollumJS.Utils.Collection.eachStep(_this.sources, function(i, source, step) {
+					source.getGroups()
+						.then(function (g) {
+							for (var j = 0; j < g.length; j++) {
+								if (group.indexOf(g[j]) == -1) {
+									group.push(g[j]);
+								}
+							}
+							step();
+						})
+					;
+				},
+				function() {
+					resolve(group);
+				});
+			});
 		}
 
 

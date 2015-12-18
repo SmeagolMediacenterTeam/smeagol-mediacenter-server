@@ -14,15 +14,28 @@ GollumJS.NS(Server.Controller, function() {
 
 		actions: {
 
-			'/serie': function(req, res, done) {
-				var medias = this.server().mediasManager.getMedias('serie');
+			'/group': function(req, res, done) {
+				this.server().mediasManager.getGroups()
+					.then(function(groups) {
+						res.end(JSON.stringify(groups));
+						done();
+					})
+					.catch(function (error) {
+						console.error(error);
+						res.end(JSON.stringify(null));
+						done();
+					})
+				;
+			},
+			'/media/:group': function(req, res, done) {
+				var medias = this.server().mediasManager.getMedias(req.params.group);
 				res.end(JSON.stringify(medias));
 				done();
 			},
-			'/serie/:source/:id': function(req, res, done) {
+			'/media/:group/:source/:id': function(req, res, done) {
 				var source = this.server().mediasManager.getSource(req.params.source);
 				if (source) {
-					source.getDetails('serie', req.params.id)
+					source.getDetails(req.params.group, req.params.id)
 						.then(function(datails) {
 							res.end(JSON.stringify(datails));
 							done();
