@@ -1,23 +1,19 @@
 GollumJS.NS(Server.Plugin, function() {
-	
-	var Promise    = require('rsvp').Promise;
-	var Collection = GollumJS.Utils.Collection;
+
+	var FS      = require('fs-promise');
+	var Promise = require('rsvp').Promise;
+	var UtilsPromise = Server.Utils.Promise;
 
 	var callForAllPlugins = function (iterable, cbName) {
-		return new Promise(function(resolve, reject) {
-			Collection.eachStep(iterable, function (i, plugin, step) {
-				try {
-					plugin[cbName](function() {
-						step();
-					});
-				} catch (e) {
-					console.error(e);
+		return UtilsPromise.eachStep(iterable, function (i, plugin, step) {
+			try {
+				plugin[cbName](function() {
 					step();
-				}
-			},
-			function () {
-				resolve();
-			});
+				});
+			} catch (e) {
+				console.error(e);
+				step();
+			}
 		});
 	};
 
@@ -34,10 +30,10 @@ GollumJS.NS(Server.Plugin, function() {
 			console.log ('Initialize Plugin Manager');
 			return this.loadPlugins()
 				.then(function(plugins) {
-		  			console.log ("Plugin loaded[ "+plugins+" ]");
+					console.log ("Plugin loaded[ "+plugins+" ]");
 				})
 				.catch(function(error) {
-		  			console.log ("Error to load all plugin", error);
+					console.log ("Error to load all plugin", error);
 				})
 			;
 		},
@@ -54,7 +50,38 @@ GollumJS.NS(Server.Plugin, function() {
 
 		start: function () {
 			console.log ('Start Plugin Manager');
-			return this.enable(this.plugins);
+			return this.enable(this.plugins)
+				.then(this._registerStaticPath.bind(this))
+			;
+		},
+
+		_registerStaticPath: function() {
+			var _this = this;
+			return UtilsPromise.eachStep(this.plugins, function (i, plugin, step) {
+				plugin.container.getRunPath()
+					.then(function(runPath) {
+						var staticPath = runPath + '/public';
+						return FS.exists(staticPath)
+							.then(function(exist) {
+								if (exist) {
+									return FS.stat(staticPath)
+										.then(function(stat){
+											if (stat.isDirectory()) {
+												_this.server.http.registerStaticPath('/'+plugin.id()+'-static', staticPath);
+											}
+										})
+									;
+								}
+							})
+						;
+					})
+					.then(step)
+					.catch (function (e) {
+						console.error(e);
+						step();
+					})
+				;
+			});
 		},
 
 		enable: function (plugins) {
@@ -66,6 +93,15 @@ GollumJS.NS(Server.Plugin, function() {
 				})
 				.then(this._afterProcessEnable.bind(this))
 			;
+		},
+
+		getPlugin: function (id) {
+			for (var i = 0; i < this.plugins.length; i++) {
+				if (this.plugins[i].id() == id) {
+					return this.plugins[i];
+				}
+			}
+			return null;
 		},
 
 		_beforeProcessEnableProcess: function () {

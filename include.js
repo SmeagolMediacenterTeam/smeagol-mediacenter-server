@@ -11,6 +11,7 @@ require('./src/Server/Scheduler.js');
 
 require('./src/Server/Controller.js');
 require('./src/Server/Controller/Api.js');
+require('./src/Server/Controller/App.js');
 
 require('./src/Server/Plugin.js');
 require('./src/Server/Plugin/Manager.js');
