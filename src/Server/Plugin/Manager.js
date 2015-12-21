@@ -33,7 +33,7 @@ GollumJS.NS(Server.Plugin, function() {
 					console.log ("Plugin loaded[ "+plugins+" ]");
 				})
 				.catch(function(error) {
-					console.log ("Error to load all plugin", error);
+					console.error ("Error to load all plugin", error);
 				})
 			;
 		},
@@ -43,7 +43,7 @@ GollumJS.NS(Server.Plugin, function() {
 			return (new Server.Plugin.Loader(this)).loadAll()
 				.then(function (plugins) {
 					_this.plugins = plugins;
-					return Server.Utils.Promise.resolve(plugins);
+					return Promise.resolve(plugins);
 				})
 			;
 		},

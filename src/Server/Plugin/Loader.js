@@ -29,7 +29,6 @@ GollumJS.NS(Server.Plugin, function() {
 
 		_search: function () {
 			var _this = this;
-			var plugins     = [];
 			var pluginsPath = _this.manager.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
 
 			return FS.readdir(pluginsPath)
@@ -42,9 +41,10 @@ GollumJS.NS(Server.Plugin, function() {
 									Server.Plugin.DirectoryContainer.isPlugin(pluginPath)
 										.then(function(isPlugin) {
 											if (isPlugin) {
-												plugins.push(new Server.Plugin.DirectoryContainer(pluginPath));
-											};
-											step();
+												step(new Server.Plugin.DirectoryContainer(pluginPath));
+											} else {
+												step();
+											}
 										});
 									;
 								} else {
@@ -58,9 +58,6 @@ GollumJS.NS(Server.Plugin, function() {
 							})
 						;
 					});
-				})
-				.then(function() {
-					return plugins;
 				})
 				.catch(function (err) {
 					console.error (err);
@@ -128,26 +125,23 @@ GollumJS.NS(Server.Plugin, function() {
 		_createPluginObject: function (pluginContainers) {
 			
 			var _this = this;
-			var plugin = [];
 
 			return Collection.eachStep(pluginContainers, function (i, container, step) {
 				try {
 					var clazz = ReflectionClass.getClassByName(container.metaInfos.main);
 					if (clazz) {
-						plugin.push(new clazz(_this.manager, container));
+						step(new clazz(_this.manager, container));
 					} else {
 						console.error("SMC Loader: Can't create plugin instance "+container.metaInfos.name);
 						console.error("  can't create \""+container.metaInfos.main+"\" instance.");
+						step();
 					}
-					step();
 				} catch (e) {
 					console.error("SMC Loader: Can't create plugin instance "+container.metaInfos.name);
 					console.log (e);
 					step();
 				}
-			})
-				.then(function() { return plugin; })
-			;
+			});
 		}
 		
 		
