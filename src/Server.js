@@ -1,7 +1,7 @@
 GollumJS.NS(function() {
 
 	var Path    = require('path');
-	var Promise = require('rsvp').Promise;
+	var Promise = GollumJS.Promise;
 
 	this.Server = new GollumJS.Class({
 		

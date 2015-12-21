@@ -1,11 +1,11 @@
 GollumJS.NS(Server.Plugin, function() {
 
-	var FS      = require('fs-promise');
-	var Promise = require('rsvp').Promise;
-	var UtilsPromise = Server.Utils.Promise;
+	var FS         = require('fs-promise');
+	var Promise    = GollumJS.Promise;
+	var Collection = GollumJS.Utils.Collection;
 
 	var callForAllPlugins = function (iterable, cbName) {
-		return UtilsPromise.eachStep(iterable, function (i, plugin, step) {
+		return Collection.eachStep(iterable, function (i, plugin, step) {
 			try {
 				plugin[cbName](function() {
 					step();
@@ -57,7 +57,7 @@ GollumJS.NS(Server.Plugin, function() {
 
 		_registerStaticPath: function() {
 			var _this = this;
-			return UtilsPromise.eachStep(this.plugins, function (i, plugin, step) {
+			return Collection.eachStep(this.plugins, function (i, plugin, step) {
 				plugin.container.getRunPath()
 					.then(function(runPath) {
 						var staticPath = runPath + '/public';

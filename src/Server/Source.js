@@ -1,6 +1,6 @@
 GollumJS.NS(Server, function() {
 
-	var Promise = require('rsvp').Promise;
+	var Promise = GollumJS.Promise;
 
 	this.Source = new GollumJS.Class({
 
@@ -18,15 +18,15 @@ GollumJS.NS(Server, function() {
 		},
 
 		getGroups: function (name) {
-			return Server.Utils.Promise.resolve([]);
+			return Promise.resolve([]);
 		},
 
 		getMedias: function (group) {
-			return Server.Utils.Promise.resolve([]);
+			returnPromise.resolve([]);
 		},
 
 		getDetails: function (group, id) {
-			return Server.Utils.Promise.resolve(null);
+			return Promise.resolve(null);
 		}
 
 	});

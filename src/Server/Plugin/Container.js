@@ -1,6 +1,6 @@
 GollumJS.NS(Server.Plugin, function() {
 
-	var Promise = require('rsvp').Promise;
+	var Promise = GollumJS.Promise;
 	var FS      = require('fs-promise');
 
 	this.Container = new GollumJS.Class({
@@ -8,7 +8,7 @@ GollumJS.NS(Server.Plugin, function() {
 		metaInfos: null,
 
 		getRunPath: function () {
-			return Server.Utils.Promise.reject(new GollumJS.Exception('Not implemented, can be override.'));
+			return Promise.reject(new GollumJS.Exception('Not implemented, can be override.'));
 		},
 
 		getInclude: function () {

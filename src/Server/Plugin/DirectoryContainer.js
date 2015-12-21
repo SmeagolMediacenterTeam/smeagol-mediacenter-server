@@ -1,6 +1,6 @@
 GollumJS.NS(Server.Plugin, function () {
 	
-	var Promise = require('rsvp').Promise;
+	var Promise = GollumJS.Promise;
 	var FS      = require('fs-promise');
 
 	this.DirectoryContainer = new GollumJS.Class({

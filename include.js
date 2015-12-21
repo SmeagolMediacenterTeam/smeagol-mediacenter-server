@@ -3,7 +3,6 @@ require('gollum-classjs');
 
 require('./src/Server.js');
 require('./src/Server/Utils.js');
-require('./src/Server/Utils/Promise.js');
 
 require('./src/Server/Request.js');
 require('./src/Server/Http.js');
