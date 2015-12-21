@@ -29,44 +29,44 @@ GollumJS.NS(Server.Plugin, function() {
 
 		_search: function () {
 			var _this = this;
-			return new Promise(function(resolve, reject) {
+			var plugins     = [];
+			var pluginsPath = _this.manager.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
 
-				var plugins     = [];
-				var pluginsPath = _this.manager.server.getRootPath()+'/'+_this.self.PLUGIN_DIR;
-
-				FS.readdir(pluginsPath)
-					.then(function (files) {
-						return Collection.eachStep(files, function (i, file, step) {
-							var pluginPath = pluginsPath+'/'+file;
-							FS.stat(pluginPath)
-								.then(function (stats) {
-									if (stats.isDirectory()) {
-										Server.Plugin.DirectoryContainer.isPlugin(pluginPath)
-											.then(function(isPlugin) {
-												if (isPlugin) {
-													plugins.push(new Server.Plugin.DirectoryContainer(pluginPath));
-												};
-												step();
-											});
-										;
-									} else {
-										// TODO ZipContainer not implemented
-										step();
-									}
-								})
-								.catch(function () {
-									console.error
+			return FS.readdir(pluginsPath)
+				.then(function (files) {
+					return Collection.eachStep(files, function (i, file, step) {
+						var pluginPath = pluginsPath+'/'+file;
+						FS.stat(pluginPath)
+							.then(function (stats) {
+								if (stats.isDirectory()) {
+									Server.Plugin.DirectoryContainer.isPlugin(pluginPath)
+										.then(function(isPlugin) {
+											if (isPlugin) {
+												plugins.push(new Server.Plugin.DirectoryContainer(pluginPath));
+											};
+											step();
+										});
+									;
+								} else {
+									// TODO ZipContainer not implemented
 									step();
-								})
-							;
-						});
-					})
-					.catch(function (err) {
-						console.error (err);
-						reject(err);
-					})
-				;
-			});
+								}
+							})
+							.catch(function () {
+								console.error
+								step();
+							})
+						;
+					});
+				})
+				.then(function() {
+					return plugins;
+				})
+				.catch(function (err) {
+					console.error (err);
+					reject(err);
+				})
+			;j
 		},
 
 		_load: function (pluginContainers) {
@@ -74,19 +74,15 @@ GollumJS.NS(Server.Plugin, function() {
 			var _this = this;
 
 			return Collection.eachStep(pluginContainers, function (i, container, step) {
-				try {
-					_this._loadMetaInfosFile (container)
-						.then(function ()      { return container.getInclude();                       })
-						.then(function (files) { return _this._requireJsFile     (container, files);  })
-						.then(step)
-						.catch (function (e) {
-							throw e;
-						})
-					;
-				} catch (e) {
-					console.log (e);
-					step();
-				}
+				_this._loadMetaInfosFile (container)
+					.then(function ()      { return container.getInclude();                       })
+					.then(function (files) { return _this._requireJsFile     (container, files);  })
+					.then(step)
+					.catch (function (e) {
+						console.error (e);
+						step();
+					})
+				;
 			})
 				.then(function () { return pluginContainers; })
 			;
@@ -103,7 +99,7 @@ GollumJS.NS(Server.Plugin, function() {
 				.then(function (json) {
 					container.metaInfos = json;
 					console.log ("SMC Loader: load meta infos for \"" + container.metaInfos.name + "\"");
-					return Server.Utils.Promise.resolve(container.metaInfos);
+					return container.metaInfos;
 				})
 			;
 		},

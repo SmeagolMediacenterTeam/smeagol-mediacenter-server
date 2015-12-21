@@ -27,7 +27,7 @@ GollumJS.NS(Server.Plugin, function() {
 									then(JSON.parse)
 								;
 							} else {
-								return Server.Utils.Promise.resolve([]);
+								return Promise.resolve([]);
 							}
 						})
 					;

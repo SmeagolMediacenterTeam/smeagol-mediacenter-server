@@ -45,7 +45,7 @@ GollumJS.NS(Server.Plugin, function () {
 		},
 
 		getRunPath: function () {
-			return Server.Utils.Promise.resolve(this.pathSource);
+			return Promise.resolve(this.pathSource);
 		}
 	});
 

@@ -40,35 +40,51 @@ GollumJS.NS(Server.Media, function() {
 			console.log ('Media Manager: Index All Media on '+this.sources.length+' sources');
 
 			var _this = this;
+			this.index = {};
 
-			return new Promise(function(resolve, reject) {
-				
-				var groups = [ 'serie' ];
-				_this.index = {};
-
-				Collection.eachStep(groups, function (i, group, stepI) {
-					_this.index[group] = [];
-					Collection.eachStep(_this.sources, function (i, source, stepJ) {
-						source.getMedias(group)
-							.then(function (medias) {
-								_this.index[group] = _this.index[group].concat(medias);
+			return this.getGroups()
+				.then(function(groups) {
+					console.log("Media Manager: groups find:", groups);
+					return Collection.eachStep(groups, function (i, group, stepI) {
+						_this.index[group] = [];
+						Collection.eachStep(_this.sources, function (i, source, stepJ) {
+							try {
+								source.getMedias(group)
+									.then(function (medias) {
+										_this.index[group] = _this.index[group].concat(medias);
+										stepJ();
+									})
+									.catch(function (error) {
+										console.error ("Error on index media:", "group="+group, "source="+source.id(), error);
+										stepJ();
+									})
+								;
+							} catch (error) {
+								console.error ("Exception on index media:", "group="+group, "source="+source.id(), error);
 								stepJ();
+							}
+						})
+							.then(function () {
+								console.log ('Media Manager: '+_this.index[group].length+' "'+group+'" Indexed');
+								stepI();
 							})
 							.catch(function (error) {
-								console.error ("Error on index media:", error);
-								stepJ();
+								console.error ("Error on index media:", "group="+group, error);
+								stepI();
 							})
 						;
-					}, function () {
-						console.log ('Media Manager: '+_this.index[group].length+' "'+group+'" Indexed');
-						stepI();
-					});
-				},
-				function() {
-					resolve(_this);
-				});
-
-			});
+					})
+						.then(function() {
+							return _this;
+						})
+						.catch(function (error) {
+							console.error ("Error on index media:", error);
+							throw error;
+						})
+					;
+				})
+			;
+			
 		},
 
 		getMedias: function (group) {
@@ -89,11 +105,11 @@ GollumJS.NS(Server.Media, function() {
 			return null;
 		},
 		
-		getGroups: function (name) {
+		getGroups: function () {
 			var _this = this;
-			return new Promise(function(resolve, reject) {
-				var group = [];
-				GollumJS.Utils.Collection.eachStep(_this.sources, function(i, source, step) {
+			var group = [];
+			return GollumJS.Utils.Collection.eachStep(_this.sources, function(i, source, step) {
+				try {
 					source.getGroups()
 						.then(function (g) {
 							for (var j = 0; j < g.length; j++) {
@@ -103,12 +119,20 @@ GollumJS.NS(Server.Media, function() {
 							}
 							step();
 						})
+						.catch(function(e) {
+							console.error('Media Manager: Error on get groups', e);
+							step();
+						})
 					;
-				},
-				function() {
-					resolve(group);
-				});
-			});
+				} catch (e) {
+					console.error('Media Manager: Exception on get groups', e);
+					step();
+				}
+			})
+				.then(function () {
+					return group;
+				})
+			;
 		}
 
 

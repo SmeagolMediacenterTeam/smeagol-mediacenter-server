@@ -8,7 +8,7 @@ GollumJS.NS(function() {
 		pluginsManager: null,
 		http: null,
 		mediasManager: null,
-
+		
 		initialize: function () {
 			console.log ('Initialize SMC Server');
 			this.pluginsManager = new Server.Plugin.Manager(this);
