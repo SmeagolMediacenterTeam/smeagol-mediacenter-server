@@ -5,8 +5,8 @@ GollumJS.NS(function() {
 
 	this.Server = new GollumJS.Class({
 		
-		pluginsManager: null,
 		http: null,
+		pluginsManager: null,
 		mediasManager: null,
 		
 		initialize: function () {

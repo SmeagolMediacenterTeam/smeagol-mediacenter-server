@@ -67,7 +67,7 @@ GollumJS.NS(Server.Plugin, function() {
 									return FS.stat(staticPath)
 										.then(function(stat){
 											if (stat.isDirectory()) {
-												_this.server.http.registerStaticPath('/'+plugin.id()+'-static', staticPath);
+												_this.server.http.registerStaticPath('/'+plugin.id()+'.static', staticPath);
 											}
 										})
 									;

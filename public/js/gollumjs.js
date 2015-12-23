@@ -1,0 +1,1 @@
+../../node_modules/gollum-classjs/build/gollumjs.js

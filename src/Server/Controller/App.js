@@ -15,7 +15,7 @@ GollumJS.NS(Server.Controller, function() {
 		actions: {
 
 			'/': function(req, res, done) {
-				res.render('index.ejs');
+				res.sendFile(GollumJS.getParameter('node.run_path')+'/public/index.html');
 			}
 		}
 
