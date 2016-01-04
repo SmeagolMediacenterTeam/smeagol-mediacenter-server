@@ -1,6 +1,8 @@
 GollumJS.NS(function() {
 
 	var Promise = GollumJS.Promise;
+	var ajax = new Ajax;
+
 
 	this.App = new GollumJS.Class({
 		
@@ -11,29 +13,33 @@ GollumJS.NS(function() {
 			console.log("Start App");
 
 			this.sass = new Sass();
-			this.match($(document));
+			this.match();
 		},
 
 		match: function (root) {
+			root = root || $(document);
 			var domComponents = root.find('component');
 			var _this = this;
 
 			return GollumJS.Utils.Collection.eachStep(domComponents, function (i, dom, step){
 				var el   = $(dom);
 				var id = el.attr('id');
-				_this.display(el, id)
+				var options = {};
+
+				_this.display(el, id, options)
 					.then(step)
 					.catch(console.error)
 				;
 			});
 		},
 
-		display: function (el, id) {
+		display: function (el, id, options) {
 			var _this = this;
 			return this.load(id)
 				.then(function (infos) {
-					var html = $.parseHTML(infos.html);
-					var div = $('<div>').append(html);
+					var html = ejs.render(infos.tpl, options) ;
+					var dom = $.parseHTML(html);
+					var div = $('<div>').append(dom);
 					return _this.match(div)
 						.then(function (infos) {
 							el.after(div.contents());
@@ -55,9 +61,9 @@ GollumJS.NS(function() {
 			}
 
 			var _this = this;
-			return this._loadHtml(id)
-				.then(function(html) {
-					return _this._parseInfos(id, html);
+			return this._loadTpl(id)
+				.then(function(tpl) {
+					return _this._parseInfos(id, tpl);
 				})
 				.then(this._loadJS.bind(this))
 				.then(this._loadCSS.bind(this))
@@ -68,18 +74,17 @@ GollumJS.NS(function() {
 			;
 		},
 
-		_loadHtml: function(id) {
-			return Ajax.request({
-				url: this.getBaseUrl(id)+id.split(':')[2]+'.html'
+		_loadTpl: function(id) {
+			return ajax.request({
+				url: this.getBaseUrl(id)+id.split(':')[2]+'.ejs'
 			});
 		},
 
-		_parseInfos: function(id, html) {
-			var match = html.match(/<!--{[\s\S]+}-->/);
+		_parseInfos: function(id, tpl) {
+			var match = tpl.match(/<% \/\*{[\s\S]+}\*\/ %>/);
 			if (match) {
 				var data = match[0].substr(match[0].indexOf('{'));
 				data = data.substr(0, data.lastIndexOf('}')+1);
-				html = html.substr(match[0].length);
 				var json = {};
 				try {
 					json = JSON.parse(data);
@@ -88,7 +93,7 @@ GollumJS.NS(function() {
 				}
 				json = $.extend({
 					id: id,
-					html: html,
+					tpl: tpl,
 					'class': null,
 					js: null,
 					css: null,
@@ -101,7 +106,7 @@ GollumJS.NS(function() {
 
 		_loadJS: function(json) {
 			if (json.js) {
-				return Ajax.request({
+				return ajax.request({
 					url: this.getBaseUrl(json.id)+json.js,
 					dataType: 'text'
 				})
@@ -123,26 +128,48 @@ GollumJS.NS(function() {
 
 		_loadCSS: function(json) {
 			var _this = this;
-			if (json.css) {
-				return Ajax.request({
-					url: this.getBaseUrl(json.id)+json.css,
-					dataType: 'text'
+
+			cssFiles = json.css;
+
+			if (cssFiles) {
+				if (typeof cssFiles == 'string') {
+					cssFiles = [cssFiles];
+				}
+				
+				return GollumJS.Utils.Collection.eachStep(cssFiles, function (i, file, step) {
+
+					if (!file) {
+						step();
+						return;
+					}
+
+					var url = _this.getBaseUrl(json.id)+file;
+
+					ajax.request({
+						url: url,
+						dataType: 'text'
+					})
+						.then(function (content) {
+							_this.sass.compile(content, function(result) {
+								if (result.status) {
+									throw new Error(result.message);
+								} else {
+									// TODO replace if exist
+									var style = $('<style data-src="'+url+'" >'+"\n/* "+url+" */\n\n"+result.text+'</style>');
+									style.appendTo(document.head);
+								}
+							});
+						})
+						.then(function () {
+							step();
+						})
+						.catch(function (e) {
+							console.error('Error on load component JS:', json.id, e);
+							step();
+						})
+					;
 				})
-					.then(function (content) {
-						_this.sass.compile(content, function(result) {
-							if (result.status) {
-								throw new Error(result.message);
-							} else {
-								var style = $('<style>'+result.text+'</style>');
-								style.appendTo(document.head);
-							}
-						});
-					})
 					.then(function () {
-						return json;
-					})
-					.catch(function (e) {
-						console.error('Error on load component JS:', json.id, e);
 						return json;
 					})
 				;
