@@ -55,7 +55,7 @@ GollumJS.NS(App, function() {
 							element.dom = dom;
 							element.afterDisplay(options);
 						}
-						
+
 						return _this.manager.match(div)
 							.then(function () {
 								el.after(div.contents());
@@ -185,12 +185,16 @@ GollumJS.NS(App, function() {
 					})
 						.then(function (content) {
 							_this.manager.sass.compile(content, function(result) {
-								if (result.status) {
-									throw new Error(result.message);
-								} else {
-									// TODO replace if exist
-									var style = $('<style data-src="'+url+'" >'+"\n/* "+url+" */\n\n"+result.text+'</style>');
-									style.appendTo(document.head);
+								try {
+									if (result.status) {
+										throw new GollumJS.Exception(result.message);
+									} else {
+										// TODO replace if exist
+										var style = $('<style data-src="'+url+'" >'+"\n/* "+url+" */\n\n"+result.text+'</style>');
+										style.appendTo(document.head);
+									}
+								} catch (e) {
+									console.error('Error on compile component CSS:', json.id, e);
 								}
 							});
 						})
@@ -198,7 +202,7 @@ GollumJS.NS(App, function() {
 							step();
 						})
 						.catch(function (e) {
-							console.error('Error on load component JS:', json.id, e);
+							console.error('Error on load component CSS:', json.id, e);
 							step();
 						})
 					;
