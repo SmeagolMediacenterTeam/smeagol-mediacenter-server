@@ -41,19 +41,25 @@ GollumJS.NS(App, function() {
 					}
 
 					var render = function() {
+
+						if (element) {
+							infos = element.infos;
+							options = element.options;
+						}
+
 						var html = ejs.render(infos.tpl, options);
 						var dom = $.parseHTML(html);
 						var div = $('<div>').append(dom);
+
+						if (element) {
+							element.dom = dom;
+							element.afterDisplay(options);
+						}
+						
 						return _this.manager.match(div)
 							.then(function () {
 								el.after(div.contents());
 								el.remove();
-
-								if (element) {
-									element.dom = dom;
-									element.afterDisplay(options);
-								}
-
 								return infos;
 							})
 						;
@@ -62,7 +68,9 @@ GollumJS.NS(App, function() {
 					if (element) {
 						return new Promise(function (resolve, reject) {
 							try {
-								element.beforeRender(infos, options, function () {
+								element.infos = infos,
+								element.options = options,
+								element.beforeRender(function () {
 									resolve(render());
 								});
 							} catch(e) {

@@ -10,11 +10,11 @@ GollumJS.NS(App.Component.Element.SMC.Main, function() {
 		init: function () {
 		},
 
-		beforeRender: function (infos, options, done) {
+		beforeRender: function (done) {
 			done();
 		},
 
-		afterDisplay: function(options) {
+		afterDisplay: function() {
 		}
 		
 	});

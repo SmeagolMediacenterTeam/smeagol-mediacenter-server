@@ -3,6 +3,8 @@ GollumJS.NS(App.Component, function() {
 	this.Element = new GollumJS.Class({
 
 		component: null,
+		infos: null,
+		options: null,
 		dom: null,
 		
 		initialize: function (component) {
