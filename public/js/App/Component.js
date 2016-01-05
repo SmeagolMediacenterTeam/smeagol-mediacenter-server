@@ -1,7 +1,7 @@
 GollumJS.NS(App, function() {
 
 	var Promise = GollumJS.Promise;
-	var ajax = new Ajax;
+	var ajax = new Ajax.Proxy;
 
 	this.Component = new GollumJS.Class({
 		
