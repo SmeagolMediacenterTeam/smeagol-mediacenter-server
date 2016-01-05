@@ -16,20 +16,65 @@ GollumJS.NS(App, function() {
 
 		display: function (el) {
 			var _this = this;
-			var options = {}; // TODO mapper les options
+			var options = {}; // TODO mapper les options depuis l'element DOM
 
 			return this.load()
 				.then(function (infos) {
-					var html = ejs.render(infos.tpl, options) ;
-					var dom = $.parseHTML(html);
-					var div = $('<div>').append(dom);
-					return _this.manager.match(div)
-						.then(function () {
-							el.after(div.contents());
-							el.remove();
-							return infos;
-						})
-					;
+
+					infos = GollumJS.Utils.clone(infos);
+					var element = null;
+
+					try {
+						if (infos['class']) {
+
+							var clazz = GollumJS.Reflection.ReflectionClass.getClassByName(infos['class']);
+							if (!clazz) {
+								throw new GollumJS.Exception('Class '+infos['class']+' not found for component id:', _this.id);
+							}
+							if (!GollumJS.Utils.isGollumJsClass(clazz) || clazz.getExtendsClass().indexOf(App.Component.Element) == -1) {
+								throw new GollumJS.Exception('Class '+infos['class']+' not an extend of App.Component.Element for component id:', _this.id);
+							}
+							element = new clazz(_this);
+						}
+					} catch (e) {
+						console.error(e);
+					}
+
+					var render = function() {
+						var html = ejs.render(infos.tpl, options);
+						var dom = $.parseHTML(html);
+						var div = $('<div>').append(dom);
+						return _this.manager.match(div)
+							.then(function () {
+								el.after(div.contents());
+								el.remove();
+
+								if (element) {
+									element.dom = dom;
+									element.afterDisplay(options);
+								}
+
+								return infos;
+							})
+						;
+					}
+
+					if (element) {
+						return new Promise(function (resolve, reject) {
+							try {
+								element.beforeRender(infos, options, function () {
+									resolve(render());
+								});
+							} catch(e) {
+								reject(e);
+							}
+						});
+						
+					} else {
+						return render();
+					}
+
+					
 				})
 				.catch(function(e) {
 					console.error(e);
@@ -79,7 +124,6 @@ GollumJS.NS(App, function() {
 					'class': null,
 					js: null,
 					css: null,
-					load: false
 				}, json);
 				return json;
 			}
