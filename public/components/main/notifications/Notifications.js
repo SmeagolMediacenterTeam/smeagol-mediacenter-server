@@ -3,7 +3,7 @@ App.Component.Element.SMC.Main = App.Component.Element.SMC.Main || {};
 
 GollumJS.NS(App.Component.Element.SMC.Main, function() {
 
-	this.Notification = new GollumJS.Class({
+	this.Notifications = new GollumJS.Class({
 		
 		Extends: App.Component.Element,
 
