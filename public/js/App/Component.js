@@ -4,59 +4,38 @@ GollumJS.NS(App, function() {
 	var ajax = new Ajax.Proxy;
 
 	this.Component = new GollumJS.Class({
-		
+
 		id: null,
 		manager: null,
 		infos: null,
-
+		
 		initialize: function (id, manager) {
 			this.id = id;
 			this.manager = manager;
 		},
 
-		display: function (el) {
+		display: function (el, parentElement) {
+			
 			var _this = this;
-			var options = {}; // TODO mapper les options depuis l'element DOM
 
 			return this.load()
 				.then(function (infos) {
 
 					infos = GollumJS.Utils.clone(infos);
-					var element = null;
+					var data = _this._elAttr2Data(el);
 
-					try {
-						if (infos['class']) {
-
-							var clazz = GollumJS.Reflection.ReflectionClass.getClassByName(infos['class']);
-							if (!clazz) {
-								throw new GollumJS.Exception('Class '+infos['class']+' not found for component id:', _this.id);
-							}
-							if (!GollumJS.Utils.isGollumJsClass(clazz) || clazz.getExtendsClass().indexOf(App.Component.Element) == -1) {
-								throw new GollumJS.Exception('Class '+infos['class']+' not an extend of App.Component.Element for component id:', _this.id);
-							}
-							element = new clazz(_this);
-						}
-					} catch (e) {
-						console.error(e);
-					}
+					var element = _this._createElementInstanceByClass(infos['class'], parentElement, data);
 
 					var render = function() {
+						
+						var html = ejs.render(element.infos.tpl, element.options);
+						var dom  = $.parseHTML(html);
+						var div  = $('<div>').append(dom);
 
-						if (element) {
-							infos = element.infos;
-							options = element.options;
-						}
+						element.dom = dom;
+						element.afterDisplay();
 
-						var html = ejs.render(infos.tpl, options);
-						var dom = $.parseHTML(html);
-						var div = $('<div>').append(dom);
-
-						if (element) {
-							element.dom = dom;
-							element.afterDisplay(options);
-						}
-
-						return _this.manager.match(div)
+						return _this.manager.match(div, element)
 							.then(function () {
 								el.after(div.contents());
 								el.remove();
@@ -65,22 +44,16 @@ GollumJS.NS(App, function() {
 						;
 					}
 
-					if (element) {
-						return new Promise(function (resolve, reject) {
-							try {
-								element.infos = infos,
-								element.options = options,
-								element.beforeRender(function () {
-									resolve(render());
-								});
-							} catch(e) {
-								reject(e);
-							}
-						});
-						
-					} else {
-						return render();
-					}
+					return new Promise(function (resolve, reject) {
+						try {
+							element.infos   = infos,
+							element.beforeRender(function () {
+								resolve(render());
+							});
+						} catch(e) {
+							reject(e);
+						}
+					});
 
 					
 				})
@@ -89,6 +62,41 @@ GollumJS.NS(App, function() {
 				})
 			;
 		},
+
+		_elAttr2Data: function(el) {
+
+			var name = el.attr('name') ? el.attr('name') : null;
+			var options = {};
+
+			return {
+				name: name,
+				options: options
+			};
+		},
+
+		_createElementInstanceByClass: function (className, parentElement, data) {
+
+			var element = null
+
+			try {
+				if (className) {
+
+					var clazz = GollumJS.Reflection.ReflectionClass.getClassByName(className);
+					if (!clazz) {
+						throw new GollumJS.Exception('Class '+className+' not found for component id:', this.id);
+					}
+					if (!GollumJS.Utils.isGollumJsClass(clazz) || clazz.getExtendsClass().indexOf(App.Component.Element) == -1) {
+						throw new GollumJS.Exception('Class '+className+' not an extend of App.Component.Element for component id:', this.id);
+					}
+					return new clazz(this, parentElement, data);
+				}
+			} catch (e) {
+				console.error(e);
+			}
+			
+			return new App.Component.Element(this, parentElement, data);
+		},
+					
 
 		load: function() {
 			if (this.infos) {

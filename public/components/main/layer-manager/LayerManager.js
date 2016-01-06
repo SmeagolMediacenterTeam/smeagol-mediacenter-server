@@ -10,7 +10,6 @@ GollumJS.NS(App.Component.Element.SMC.Main, function() {
 		Extends: App.Component.Element,
 
 		init: function () {
-			console.log(this);
 		},
 
 		beforeRender: function (done) {

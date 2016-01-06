@@ -1,6 +1,12 @@
 GollumJS.NS(App.Component, function() {
-	
+
 	this.Manager = new GollumJS.Class({
+		
+		Extends: App.AHierarchyTree,
+
+		Static: {
+			DEFAULT_INSTANCE_NAME: 'instance'
+		},
 
 		components: {},
 		app: null,
@@ -17,8 +23,9 @@ GollumJS.NS(App.Component, function() {
 			;
 		},
 
-		match: function (root) {
+		match: function (root, parent) {
 			root = root || $(document);
+			parent = parent || null;
 			var domComponents = root.find('component');
 			var _this = this;
 
@@ -29,7 +36,7 @@ GollumJS.NS(App.Component, function() {
 
 				var component = _this.getComponent(id);
 				
-				component.display(el)
+				component.display(el, parent)
 					.then(step)
 					.catch(console.error)
 				;
