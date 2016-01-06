@@ -14,6 +14,10 @@ GollumJS.NS(App, function() {
 				element.name += '_'+element.uniqId;
 			}
 			this.instanceChilds[element.name] = element;
+		},
+		
+		newComponentInstanceById: function (id, param, options) {
+
 		}
 
 	});
