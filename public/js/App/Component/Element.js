@@ -37,6 +37,10 @@ GollumJS.NS(App.Component, function() {
 		getManager: function () {
 			return this.component.manager;
 		},
+
+		getParentElement: function () {
+			return this.parentElement;
+		},
 		
 		/**
 		 * Can be override

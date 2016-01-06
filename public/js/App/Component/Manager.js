@@ -23,9 +23,20 @@ GollumJS.NS(App.Component, function() {
 			;
 		},
 
+		getManager: function () {
+			return this;
+		},
+
+		getParentElement: function () {
+			return this;
+		},
+
 		match: function (root, parent) {
 			root = root || $(document);
 			parent = parent || null;
+			if (App.Component.Manager.isInstance(parent)) {
+				parent = null;
+			}
 			var domComponents = root.find('component');
 			var _this = this;
 
@@ -37,7 +48,9 @@ GollumJS.NS(App.Component, function() {
 				var component = _this.getComponent(id);
 				
 				component.display(el, parent)
-					.then(step)
+					.then(function (element) {
+						step(element);
+					})
 					.catch(console.error)
 				;
 			});

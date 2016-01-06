@@ -39,7 +39,6 @@ GollumJS.NS(App, function() {
 							.then(function () {
 								el.after(div.contents());
 								el.remove();
-								return infos;
 							})
 						;
 					}
@@ -48,10 +47,15 @@ GollumJS.NS(App, function() {
 						try {
 							element.infos   = infos,
 							element.beforeRender(function () {
-								resolve(render());
+								render().
+									then(function () {
+										resolve(element);
+									})
+								;
 							});
 						} catch(e) {
 							reject(e);
+					return null;
 						}
 					});
 
@@ -59,6 +63,7 @@ GollumJS.NS(App, function() {
 				})
 				.catch(function(e) {
 					console.error(e);
+					return null;
 				})
 			;
 		},
