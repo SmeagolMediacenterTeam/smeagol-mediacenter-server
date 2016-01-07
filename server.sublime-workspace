@@ -4,16 +4,44 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getChildByName"
+			],
+			[
+				"in",
+				"instanceChilds"
+			],
+			[
+				"c",
+				"childs"
+			],
+			[
+				"K",
+				"KEYWORD_ROOT"
+			],
+			[
+				"pa",
+				"parentElement"
+			],
+			[
+				"re",
+				"request"
+			],
+			[
+				"_",
+				"_pile"
+			],
+			[
+				"ca",
+				"cache_path"
+			],
+			[
 				"pr",
 				"prioritity"
 			],
 			[
 				"lo",
 				"login"
-			],
-			[
-				"re",
-				"removeClass"
 			],
 			[
 				"t",
@@ -26,14 +54,6 @@
 			[
 				"fon",
 				"font-size"
-			],
-			[
-				"pa",
-				"padding"
-			],
-			[
-				"in",
-				"inline-block"
 			],
 			[
 				"lastRe",
@@ -126,15 +146,150 @@
 			[
 				"va",
 				"value"
-			],
-			[
-				"c",
-				"constructeur"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "public/index.html",
+			"settings":
+			{
+				"buffer_size": 1467,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/layer-manager/layer-manager.ejs",
+			"settings":
+			{
+				"buffer_size": 212,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<% /*{\n	\"js\": \"Notification.js\",\n	\"css\": \"notification.scss\",\n	\"class\": \"App.Component.Element.SMC.Main.Notification\"\n}*/ %>\n<div class=\"notification\" >\n</div>",
+			"file": "public/components/main/notification/notifications.ejs",
+			"file_size": 159,
+			"file_write_time": 1452005854000000,
+			"settings":
+			{
+				"buffer_size": 159,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/style/style.ejs",
+			"settings":
+			{
+				"buffer_size": 56,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/style/main.scss",
+			"settings":
+			{
+				"buffer_size": 63,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/style/reset.scss",
+			"settings":
+			{
+				"buffer_size": 63,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/App.js",
+			"settings":
+			{
+				"buffer_size": 194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/App/Component.js",
+			"settings":
+			{
+				"buffer_size": 5300,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "plugins/ZT/ZTPlugin/ZTCaller.js",
+			"settings":
+			{
+				"buffer_size": 4699,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/view-picture/ViewPicture.js",
+			"settings":
+			{
+				"buffer_size": 658,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/view-picture/view-picture.ejs",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/view-picture/view-picture.scss",
+			"settings":
+			{
+				"buffer_size": 48,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/picture/picture.ejs",
+			"settings":
+			{
+				"buffer_size": 277,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/picture/picture.scss",
+			"settings":
+			{
+				"buffer_size": 48,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/media/picture/Picture.js",
+			"settings":
+			{
+				"buffer_size": 658,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/notifications/Notifications.js",
+			"settings":
+			{
+				"buffer_size": 397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/components/main/layer-manager/LayerManager.js",
+			"settings":
+			{
+				"buffer_size": 419,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -160,6 +315,83 @@
 	},
 	"file_history":
 	[
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/Ajax/Proxy.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Component/Element.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/layer-manager/LayerManager.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/notifications/Notifications.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/AHierarchyTree.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Component/Manager.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Utils.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Class.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/GollumJS.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/notification/Notifications.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/notifications/notifications.scss",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/notifications/notifications.ejs",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Component/AHierarchyTree.js",
+		"/home/dduboeuf/Works/JS/SMC/server/include.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Component/HierarchyTree",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/tests/Tests/Class/TestClassExtendsMutiple.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/notification/Notification.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Exception.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Reflection/ReflectionClass.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Ajax/Proxy.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/Ajax.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/components/main/style/style.scss",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/App/Component.js",
+		"/home/dduboeuf/Works/JS/SMC/server/public/js/simple-require.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/include.json",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Utils/Collection.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Promise.js",
+		"/home/dduboeuf/Works/JS/SMC/server/views/index.ejs",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/Loader.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Utils/Promise.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/Manager.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Http.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/Container.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/DirectoryContainer.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Source.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/namespace.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/init.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/dependency.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/init;js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/build/gollumjs.js",
+		"/home/dduboeuf/Works/JS/SMC/server/index.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/tests/EntityExemples.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Reflection/FileJSParser/FileJSParser.js",
+		"/home/dduboeuf/Works/JS/SMC/server/config.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/ZTPlugin/ZTCaller.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Scheduler.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Annotation/AbstractAnnotation.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Controller/Api.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/ZTPlugin.js",
+		"/home/dduboeuf/Works/JS/ZTApi/App/EntityRepository/DOMRepository.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Parser/ArgumentsParser.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Cache/Cache.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/include.json",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Media/Manager.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/ZTPlugin/Source.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/ZTPlugin/ZTCaller/Serie.js",
+		"/home/dduboeuf/Works/JS/ZTApi/App/EntityRepository/SerieRepository.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/plugin.json",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Controller.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/ZipContainer.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/index.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/bin/build.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Utils.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Server/Plugin/Utils/Promise.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/includes.json",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/src/Reflection/ClassParser.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/App/Plugin.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/express/index.js",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/package.json",
+		"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs/config.js",
+		"/home/dduboeuf/Works/JS/SMC/server/config/config.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/App/Plugin/Loader.js",
+		"/home/dduboeuf/Works/JS/SMC/server/plugins/ZT/index.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Plugin.js",
+		"/home/dduboeuf/Works/JS/SMC/server/src/Plugin/Loader.js",
 		"/run/user/1000/gvfs/sftp:host=elewendyl.fr,user=elewendyl/home/elewendyl/share/freeboxos.elewendyl.fr/freeboxos.sublime-workspace",
 		"/home/dduboeuf/Works/JS/ZTApi/index.js",
 		"/run/user/1000/gvfs/sftp:host=elewendyl.fr/home/elewendyl/share/freeboxos.elewendyl.fr/web/js/Explorer.js",
@@ -210,94 +442,18 @@
 		"/home/smeagol/aaa.html",
 		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassConstructor.js",
 		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Class.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/testClass.html",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestException.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Exception.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Utils.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassExtends.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassParent.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/DataClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Class2.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassExtendsMutiple.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Tests/TestClassScope.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/testfuncs.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/src/Object.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/index.html",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/TestConstructorClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/TestExtendsClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/Unit/DataClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Utils.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Class.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/Class2.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/TestContructorClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/DataClass.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/testfuncs.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/test.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/Game.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/includes.json",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/package.json",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/generate.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/bin/build.js",
-		"/home/smeagol/Documents/index.html",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/UI.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/Engine/View.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/namespace.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/config.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/EnLigne/App.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/5EnLigne/App.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/App/config.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/GollumJS.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/5EnLigne/namespace.js",
-		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/namespace.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/game.html",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/js/includes.js",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/player.php",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/style.css",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/search-infos.php",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/index.php",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/download.php",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/js/index.js",
-		"/run/user/1000/gvfs/sftp:host=fareiwarr.elewendyl.fr,user=maison/var/www/html/freeboxos/video.php",
-		"/home/smeagol/Works/Glowbl/FakeServer/index.js",
-		"/home/smeagol/Works/JS/smeagol-mediacenter/src/SMC/App.js",
-		"/home/smeagol/Works/JS/freeboxOS2/web/js/components/Console.js",
-		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/build.py",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionMethod.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/generate.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Cache/Cache.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/tmp/cache/datas.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/index.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionClass.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ClassParser.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Annotation/Parser.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/FileJSParser.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/GollumJS.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/namespace.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/includes.json",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Reflection/ReflectionProperty.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Annotation/AbstractAnnotation.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/build.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/package.json",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/build/gollumjs.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/bin/listjsfiles-json.js",
-		"/home/smeagol/Works/HTML5/e-blobution/web/js/Class.js/Utils.js",
-		"/home/smeagol/Works/Minecraft/Git/CastleDefenders-1.7.10/build.gradle",
-		"/home/smeagol/Works/Minecraft/Git/JammyFurniture-1.6.4/README.md",
-		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/README.md",
-		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/install.py",
-		"/home/smeagol/Works/Minecraft/Git/build-ori.py",
-		"/home/smeagol/Works/Minecraft/Git/MorePistons-1.6.4/eclipse/Minecraft/.classpath",
-		"/home/smeagol/Works/Minecraft/Git/JammyFurniture-1.6.4/eclipse/Minecraft/.project"
+		"/home/smeagol/Works/HTML5/5enligne/web/js/Class.js/tests/testClass.html"
 	],
 	"find":
 	{
-		"height": 35.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
+			"/home/dduboeuf/Works/JS/SMC/server/node_modules/gollum-classjs",
 			"/home/smeagol/Works/JS/smeagol-mediacenter/src/SMC"
 		]
 	},
@@ -306,6 +462,114 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"			\n",
+			"ejs",
+			"KEYWORD_PARENT",
+			"data",
+			"date",
+			"options",
+			"name",
+			"Component",
+			"}\n",
+			"{\n",
+			"component",
+			"componentInstanceChilds",
+			"_this.element",
+			"element",
+			"_this",
+			"match",
+			"components",
+			"=\"#\" ",
+			"console.l",
+			"Prom",
+			"PRom",
+			"/\n",
+			"this",
+			"Promise",
+			"id",
+			"			\n",
+			"this",
+			"GollumJS.Utils.Collection.eachStep(domComponents, function (i, dom, step)",
+			"_loadCSS",
+			"Notification",
+			"	\n",
+			"Ajax",
+			"controller",
+			"domComponents",
+			"domComponents\ndomComponents",
+			"domComponents",
+			"}\n",
+			"Static",
+			"ajax",
+			" '",
+			"parse",
+			"js",
+			"		\n",
+			"display",
+			"ejs",
+			"html",
+			"promise",
+			"/\n",
+			"each",
+			"RSVP",
+			" ;",
+			"GollumJS",
+			"function",
+			"if",
+			"();\n",
+			"__init__",
+			"doResolve",
+			"handle",
+			"onRejected",
+			"doResolve",
+			"					\n",
+			"_this",
+			"\n					_this._result = value;",
+			"					\n",
+			"cache_path",
+			"Promise",
+			"getParameter",
+			"config",
+			"Read cache file",
+			"pathDirectory",
+			"console",
+			"gollumjs_path",
+			"node.",
+			"node",
+			"JSDom",
+			"_this",
+			"_createPluginObject",
+			"resolve",
+			"fs.",
+			"this",
+			"_this",
+			"dataddd\n\ndataddd",
+			"files",
+			"runPath",
+			"exist",
+			"JSON",
+			"});\n",
+			"files",
+			"			\n",
+			"		\n",
+			"dir",
+			"is",
+			"isD",
+			"	\n",
+			"('.'));\n",
+			"global:",
+			"global :",
+			"global:",
+			"global",
+			"GollumJS.c",
+			"GollumJS.C",
+			"GollumJS.con",
+			"Gollum.con",
+			"Gollum.C",
+			"GollumC",
+			"	\n",
+			"		\n",
+			"	\n",
 			"				\n",
 			"	\n",
 			"toJquery",
@@ -325,115 +589,7 @@
 			"mode",
 			"autoloadNamespaces",
 			"classExists",
-			"    ",
-			"value",
-			"console",
-			"initialize",
-			"testCompare",
-			"Arra",
-			"console",
-			"Static",
-			"parentInScope",
-			"Object",
-			"implementation",
-			"protoype",
-			"proto",
-			"back",
-			"click",
-			"ping",
-			"cook",
-			"scaleX",
-			"freebox",
-			"dow",
-			"click",
-			"info",
-			"Mute",
-			"mute",
-			"; ",
-			"none",
-			"exit",
-			"cleanBuild",
-			"out",
-			"zipdir",
-			"print",
-			"glob.iglob(",
-			"glo",
-			"dir",
-			"path",
-			"comme",
-			"classList",
-			"console",
-			"this.datas",
-			"Cache.js",
-			"copy",
-			"str",
-			"read_properties_file",
-			"forge_main",
-			"create_link",
-			"ln",
-			"lb ",
-			"multiplicator",
-			"\"metadata\": 1",
-			"\"orientation\": \"top\"",
-			"\"orientation\": \"up\"",
-			"getAnnotationIdentifier",
-			");\n",
-			" {};",
-			"console",
-			"console.log",
-			"getPosOfStartNameDeclaration",
-			"comment",
-			"getComment",
-			"rClass",
-			"];\n",
-			"\"{\"\n",
-			"console",
-			"		\n",
-			"mysq",
-			"{",
-			"app",
-			"newClass",
-			"NewClass",
-			"NewCl",
-			"SMC.",
-			"{},\n",
-			"dd",
-			"node-w",
-			"node",
-			"},\n",
-			"}\n",
-			"build",
-			"debug",
-			"\",\n",
-			"shell",
-			"platforms",
-			"shell",
-			"exec",
-			"shell",
-			"github",
-			"clone",
-			"{\n",
-			"exec",
-			"}\n",
-			"clone",
-			"start",
-			"nodewebkit",
-			"exec",
-			"exec:linux64",
-			"parseBuildPlatforms",
-			"registerTask",
-			"build",
-			"white",
-			"show",
-			"webkit",
-			"}\n",
-			"Property",
-			"Item",
-			"Yasmine<h3",
-			"<h3 style=\"margin: 0;padding: 0;font-family: &quot;HelveticaNeue-Light&quot;, &quot;Helvetica Neue Light&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;Lucida Grande&quot;, sans-serif;line-height: 1.2;margin-bottom: 15px;color: #000;font-weight: 500;",
-			"font-size: 90%;",
-			"Yassmine",
-			"<h3 style=\""
+			"    "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -441,6 +597,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"element",
+			"instanceChilds",
+			"element",
+			"this",
+			"ajax",
+			"cachePath",
+			"FS.",
 			"	",
 			";\\n",
 			"<?php echo $video; ?>",
@@ -459,14 +622,464 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
+			"selected": 14,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "public/index.html",
+					"settings":
+					{
+						"buffer_size": 1467,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								233,
+								233
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "public/components/main/layer-manager/layer-manager.ejs",
+					"settings":
+					{
+						"buffer_size": 212,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "public/components/main/notification/notifications.ejs",
+					"settings":
+					{
+						"buffer_size": 159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								77,
+								77
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/components/main/style/style.ejs",
+					"settings":
+					{
+						"buffer_size": 56,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "public/components/main/style/main.scss",
+					"settings":
+					{
+						"buffer_size": 63,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12,
+								12
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/components/main/style/reset.scss",
+					"settings":
+					{
+						"buffer_size": 63,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "public/js/App.js",
+					"settings":
+					{
+						"buffer_size": 194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "public/js/App/Component.js",
+					"settings":
+					{
+						"buffer_size": 5300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								894,
+								894
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 302.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "plugins/ZT/ZTPlugin/ZTCaller.js",
+					"settings":
+					{
+						"buffer_size": 4699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4547,
+								4547
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1033.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "public/components/media/view-picture/ViewPicture.js",
+					"settings":
+					{
+						"buffer_size": 658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								607,
+								607
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "public/components/media/view-picture/view-picture.ejs",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "public/components/media/view-picture/view-picture.scss",
+					"settings":
+					{
+						"buffer_size": 48,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								48,
+								48
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "public/components/media/picture/picture.ejs",
+					"settings":
+					{
+						"buffer_size": 277,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "public/components/media/picture/picture.scss",
+					"settings":
+					{
+						"buffer_size": 48,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "public/components/media/picture/Picture.js",
+					"settings":
+					{
+						"buffer_size": 658,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "public/components/main/notifications/Notifications.js",
+					"settings":
+					{
+						"buffer_size": 397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "public/components/main/layer-manager/LayerManager.js",
+					"settings":
+					{
+						"buffer_size": 419,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								365,
+								365
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -507,7 +1120,7 @@
 	},
 	"replace":
 	{
-		"height": 46.0
+		"height": 82.0
 	},
 	"save_all_on_build": true,
 	"select_file":

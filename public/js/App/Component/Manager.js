@@ -44,7 +44,7 @@ GollumJS.NS(App.Component, function() {
 				
 				var el   = $(dom);
 				var id = el.attr('id');
-
+				
 				var component = _this.getComponent(id);
 				
 				component.display(el, parent)

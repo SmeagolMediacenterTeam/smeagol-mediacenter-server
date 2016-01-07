@@ -59,6 +59,7 @@ GollumJS.NS(Ajax, function() {
 									_this.calling[id][i].reject(error);
 								}
 							}
+							delete (_this.calling[id]);
 						}
 					})
 				;

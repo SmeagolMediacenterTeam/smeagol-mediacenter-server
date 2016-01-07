@@ -27,35 +27,38 @@ GollumJS.NS(App, function() {
 					var element = _this._createElementInstanceByClass(infos['class'], parentElement, data);
 
 					var render = function() {
-						
+
 						var html = ejs.render(element.infos.tpl, element.options);
 						var dom  = $.parseHTML(html);
 						var div  = $('<div>').append(dom);
 
 						element.dom = dom;
 						element.afterDisplay();
+						el.after(div.contents());
+						el.remove();
 
-						return _this.manager.match(div, element)
-							.then(function () {
-								el.after(div.contents());
-								el.remove();
-							})
-						;
+						return _this.manager.match(div, element);
 					}
 
 					return new Promise(function (resolve, reject) {
 						try {
 							element.infos   = infos,
 							element.beforeRender(function () {
-								render().
-									then(function () {
-										resolve(element);
-									})
-								;
+								try {
+									render()
+										.then(function () {
+											resolve(element);
+										})
+										.catch(function (error) {
+											reject(error);
+										})
+									;
+								} catch (error) {
+									reject(error);
+								}
 							});
 						} catch(e) {
 							reject(e);
-					return null;
 						}
 					});
 
